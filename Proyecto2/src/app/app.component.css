@@ -1,0 +1,65 @@
+.activebutton {
+    box-shadow: inset 0px 1px 0px 0px #dcecfb;
+    background: linear-gradient(to bottom, #fdfdfd 0%, #3e3e3e 100%);
+    background-color: #bddbfa;
+    border-radius: 6px;
+    border: 1px solid #84bbf3;
+    display: inline-block;
+    cursor: pointer;
+    color: #000000;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 6px 24px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #528ecc;
+    outline: 0;
+}
+/* ############################################################################################## */
+
+
+/*Para la barra superior donde se detalla el nombre de la empresa*/
+.barra {
+    background: #000000;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 17.5%;
+}
+/*Titulo de vista*/
+.barra h2{
+    font-family: 'Times New Roman', Times, serif;
+    text-align: right;
+}
+
+.links a{
+    text-decoration: none;
+    color: black;
+    display: block;
+    padding: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: large;
+}
+.links{
+    background-color:#84bbf3;
+    display: none;
+}
+
+.links a:hover{
+    background-color: #528ecc;
+    border-radius: 5px;
+    color: #fdfdfd;
+}
+
+.desplegable:hover .links{
+    display: block;
+}
+
+.desplegable .links{
+    border-radius: 5px;
+    border-color: #000000;
+}
+
+/*para que no cambie la posicion del boton*/
+.desplegable{
+    position:relative;
+}
