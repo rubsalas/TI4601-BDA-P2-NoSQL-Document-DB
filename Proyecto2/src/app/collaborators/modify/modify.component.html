@@ -1,0 +1,78 @@
+<form class="formulary">
+  
+    <div class="segment">
+        <h1>Modificar solicitud de viaje</h1>
+    </div>
+    <label>
+        <h5>Seleccione el viaje a modificar:</h5>
+        <select class="rounded-pill" aria-label="Default select example">
+            <option selected>Seleccione una opción</option>
+            <option value="1">viaje1</option>
+            <option value="2">viaje2</option>
+        </select>
+    </label>
+ 
+  </form>
+  
+  <button class="rounded-pill" (click)="mostrarDiv()" style="margin-left: 340px;">Modificar viaje seleccionado</button>
+  <button class="rounded-pill" (click)="eliminar()" style="margin-left: 25px;">Eliminar Viaje</button>
+  
+
+  <div *ngIf="isClosed">
+    <h5>>> Modifique cualquiera de los espacios</h5>
+    <label>
+        <input class="rounded-pill" type="text" placeholder="Nombre Completo"/>
+    </label>
+    <label>
+        <input class="rounded-pill" type="text" placeholder="Puesto"/>
+    </label>
+    <label>
+        <input class="rounded-pill" type="text" placeholder="Departamento"/>
+    </label>
+    <label>
+        <h5>Seleccione el tipo de viaje:</h5>
+        <select class="rounded-pill" aria-label="Default select example">
+            <option selected>Seleccione una opción</option>
+            <option value="si">Internacional</option>
+            <option value="no">Local</option>
+        </select>
+    </label>
+    <label>
+        <input class="rounded-pill" type="text" placeholder="País Destino"/>
+    </label>
+    <label>
+        <h5>Seleccione el motivo del viaje:</h5>
+        <select class="rounded-pill" aria-label="Default select example">
+            <option selected>Seleccione una opción</option>
+            <option value="Seguimiento">Seguimiento</option>
+            <option value="Cierre de venta">Cierre de venta</option>
+            <option value="Capacitacion">Capacitación</option>
+        </select>
+    </label>
+    <label>
+        <input type="text" class="rounded-pill" placeholder="Fecha de Inicio del Viaje (dd/mm/aaaa)" required aria-label="Date input 3 (using aria-label)">
+    </label>
+    <label>
+        <input type="text" class="rounded-pill" placeholder="Fecha de Finalización del Viaje (dd/mm/aaaa)" required aria-label="Date input 3 (using aria-label)">
+    </label>
+    <label>
+        <input class="rounded-pill" type="text" placeholder="Nombre de la Aerolínea"/>
+    </label>
+    <label>
+        <input class="rounded-pill" type="text" placeholder="Precio de los boletos"/>
+    </label>
+    <label>
+        <input class="rounded-pill" type="text" placeholder="Nombre del Alojamiento"/>
+    </label>
+    <label>
+        <h5>Requiere transporte?</h5>
+        <select class="rounded-pill" aria-label="Default select example">
+            <option selected>Seleccione una opción</option>
+            <option value="si">Sí</option>
+            <option value="no">No</option>
+        </select>
+    </label>
+
+    <button class="rounded-pill" type="button"><i class="icon ion-md-lock"></i>Modificar Viaje</button>
+    <br><br><br>
+  </div>
