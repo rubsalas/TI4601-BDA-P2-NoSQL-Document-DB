@@ -1,0 +1,18 @@
+<div>
+    <label for="destino">Seleccionar destino específico:</label>
+    <select id="destino">
+      <!-- Opciones para seleccionar el destino (por ejemplo, País 1, País 2, etc.) -->
+    </select>
+  
+    <button (click)="buscarColaboradores()">Buscar</button>
+  </div>
+  
+  <div>
+    <!-- Aquí se mostrará la lista de colaboradores con viajes al destino específico -->
+    <ul>
+      <li *ngFor="let colaborador of colaboradoresConViajes">
+        {{ colaborador.nombre }} viajó a {{ colaborador.destino }} el {{ colaborador.fechaInicio }} por {{ colaborador.motivo }}
+      </li>
+    </ul>
+  </div>
+  

@@ -1,0 +1,22 @@
+<table>
+    <thead>
+      <tr>
+        <th>ID Solicitud</th>
+        <th>Colaborador</th>
+        <th>Fecha de Solicitud</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let solicitud of solicitudesPendientes">
+        <td>{{ solicitud.id }}</td>
+        <td>{{ solicitud.colaborador }}</td>
+        <td>{{ solicitud.fechaSolicitud }}</td>
+        <td>
+          <button (click)="aprobarSolicitud(solicitud)">Aprobar</button>
+          <button (click)="rechazarSolicitud(solicitud)">Rechazar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
