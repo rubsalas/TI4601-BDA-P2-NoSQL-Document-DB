@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DestinosComponent } from './components/destinos/destinos.component';
-import { SolicitudesPendientesComponent } from './components/solicitudes-pendientes/solicitudes-pendientes.component';
+import { SolicitudesComponent } from './components/solicitudes-pendientes/solicitudes-pendientes.component';
 import { ViajesInternacionalesComponent } from './components/viajes-internacionales/viajes-internacionales.component';
 import { ViajesProgramadosComponent } from './components/viajes-programados/viajes-programados.component';
 
@@ -13,7 +13,7 @@ import { ViajesProgramadosComponent } from './components/viajes-programados/viaj
   declarations: [
     AppComponent,
     DestinosComponent,
-    SolicitudesPendientesComponent,
+    SolicitudesComponent,
     ViajesInternacionalesComponent,
     ViajesProgramadosComponent,
 

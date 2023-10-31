@@ -7,8 +7,13 @@ import { Component } from '@angular/core';
 })
 export class ViajesInternacionalesComponent {
   // Propiedades para almacenar el trimestre y el año seleccionados
-  selectedTrimestre: string = '';
-  selectedAno: string = '';
+  
+
+  trimestres: number[] = [1, 2, 3, 4];
+  anios: number[] = [2023, 2024, 2025]; // Puedes agregar más años según tus necesidades
+
+  selectedTrimestre: number | null = null;
+  selectedAno: number | null = null;
 
   // Propiedad para almacenar la lista de colaboradores con viajes internacionales (simulado)
   colaboradoresConViajes: any[] = [
@@ -17,6 +22,7 @@ export class ViajesInternacionalesComponent {
     // Agrega más colaboradores y viajes internacionales según tu caso
   ];
 
+  
   // Función para buscar colaboradores con viajes internacionales
   buscarViajes() {
     // Implementa la lógica para buscar y mostrar la lista de colaboradores con viajes internacionales

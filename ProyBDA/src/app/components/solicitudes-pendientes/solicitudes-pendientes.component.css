@@ -1,0 +1,44 @@
+/* Estilo para la tabla */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+}
+
+/* Estilo para las filas de la tabla */
+.table-row {
+  background-color: #f2f2f2;
+}
+
+/* Estilo para las celdas de la tabla */
+.table td, .table th {
+  padding: 8px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+/* Estilo para los botones "Aceptar" */
+.btn-aceptar {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.btn-aceptar:hover {
+  background-color: #45a049;
+}
+
+/* Estilo para los botones "Rechazar" */
+.btn-rechazar {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.btn-rechazar:hover {
+  background-color: #d32f2f;
+}
