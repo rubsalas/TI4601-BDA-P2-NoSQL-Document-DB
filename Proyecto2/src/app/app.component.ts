@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'; 
+import { ApiService } from './api.service';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +14,8 @@ export class AppComponent implements OnInit{
   mostrarColabBtn: boolean = false;
   mostrarAdminBtn: boolean = false; 
   closeBtn: boolean = false;
+
+  constructor(private api:ApiService){ }
 
   ngOnInit(): void {
     const trigger = document.querySelector('.hamburger') as HTMLElement;
@@ -39,14 +42,19 @@ export class AppComponent implements OnInit{
     }
   }
 
+  // Cerrar sesion
   cerrarSesion(){
     this.isColab = false;
     this.isAdmin = false;
     this.mostrarColabBtn = false;
     this.mostrarAdminBtn = false;
+    this.api.setLoggedAdmin(false);
+    this.api.setLoggedCollab(false);
   }
 
-
+  //----------------------------------------------->
+  // Funciones para el menu desplegable
+  //----------------------------------------------->
   hamburgerCross() {
     const trigger = document.querySelector('.hamburger') as HTMLElement;
     const overlay = document.querySelector('.overlay') as HTMLElement;

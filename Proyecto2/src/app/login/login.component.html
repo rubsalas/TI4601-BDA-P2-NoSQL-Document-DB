@@ -1,19 +1,19 @@
 <br><br><br>
 <div class="container" id="container">
 	<div class="form-container sign-up-container">
-		<form action="#">
+		<form [formGroup]="signUpForm" (ngSubmit)="createAccount(signUpForm.value)">
 			<h1>Crear Cuenta</h1>
-			<input type="text" placeholder="Nombre" />
-			<input type="email" placeholder="Correo" />
-			<input type="password" placeholder="Contraseña" />
+			<input type="text" placeholder="Nombre" formControlName="name"/>
+			<input type="email" placeholder="Correo" formControlName="email"/>
+			<input type="password" placeholder="Contraseña" formControlName="password"/>
 			<button>Resgistrarme</button>
 		</form>
 	</div>
 	<div class="form-container sign-in-container">
-		<form action="#">
+		<form [formGroup]="loginForm" (ngSubmit)="verifySgnIn(loginForm.value)">
 			<h1>Iniciar Sesión</h1>
-			<input type="email" placeholder="Correo" />
-			<input type="password" placeholder="Contraseña" />
+			<input #email type="email" placeholder="Correo" formControlName="email"/>
+			<input #password type="password" placeholder="Contraseña"  formControlName="password"/>
 			<button>Iniciar Sesión</button>
 		</form>
 	</div>
