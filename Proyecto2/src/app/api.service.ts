@@ -14,16 +14,44 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   //------------------------------------------------------------------------>
-  // Funciones opara get, post y put en la base de datos
+  //         Funciones opara get, post y put en la base de datos
   //------------------------------------------------------------------------>
+  
+  // registrar usuario 
   addUsr(form:any):Observable<any>{
     let direccion = this.APIUrl+'/api/Investigator/Mult';
     console.log(form);
     console.log(direccion)
     return this.http.post<any>(direccion, form);
   }
+
+  // get usuarios registrados
   getUsers():Observable<any[]>{
     return this.http.get<any>(this.APIUrl+'/api/Publication/Relationship');
+  }
+
+  // add solicitud
+  addSolicitud(form:any):Observable<any>{
+    let direccion = this.APIUrl+'/api/Investigator/Mult';
+    console.log(form);
+    console.log(direccion)
+    return this.http.post<any>(direccion, form);
+  }
+  // put solicitud
+  putSolicitud(id: number, nuevoData: any): Observable<any> {
+    const url = `${this.APIUrl}/api/Investigator/${id}`;
+    return this.http.put(url, nuevoData);
+  }
+  // delete solicitud
+
+  // get solicitudes
+  getSolicitudes():Observable<any[]>{
+    return this.http.get<any>(this.APIUrl+'/api/Publication/Relationship');
+  }
+  // put solicitud state
+  putSolicitudState(id: number, nuevoData: any): Observable<any> {
+    const url = `${this.APIUrl}/api/Investigator/${id}`;
+    return this.http.put(url, nuevoData);
   }
 
   //---------------------------------->
@@ -42,14 +70,3 @@ export class ApiService {
     return this.loggedAdmin;
   }
 }
-
-
-
-/**  funcion para actualizar datos
- 
-  putInvestigator(id: number, nuevoData: any): Observable<any> {
-    const url = `${this.APIUrl}/api/Investigator/${id}`;
-    return this.http.put(url, nuevoData);
-  }
-
-*/
