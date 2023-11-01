@@ -1,18 +1,55 @@
-<div>
-    <label for="destino">Seleccionar destino específico:</label>
-    <select id="destino">
-      <!-- Opciones para seleccionar el destino (por ejemplo, País 1, País 2, etc.) -->
-    </select>
+<form class="formulary">
   
-    <button (click)="buscarColaboradores()">Buscar</button>
+  <div class="segment">
+      <h1>Consulta de viajes por destino</h1>
   </div>
-  
-  <div>
-    <!-- Aquí se mostrará la lista de colaboradores con viajes al destino específico -->
-    <ul>
-      <li *ngFor="let colaborador of colaboradoresConViajes">
-        {{ colaborador.nombre }} viajó a {{ colaborador.destino }} el {{ colaborador.fechaInicio }} por {{ colaborador.motivo }}
-      </li>
-    </ul>
-  </div>
-  
+  <br>
+  <label>
+      <h5>Seleccione el destino:</h5>
+      <select class="rounded-pill" aria-label="Default select example">
+        <option selected>Seleccione una opción</option><!--hacer select dinamicos-->
+        <option *ngFor="let sol of solicitudes" [value]="sol.destino">
+          {{sol.destino}}
+        </option>
+      </select>
+  </label>
+
+</form>
+
+<button class="rounded-pill" (click)="mostrarDiv()" style="margin-left: 260px;">Consultar</button>
+<br><br><br><br>
+
+<div *ngIf="isClosed">
+  <!-- poner la tabla aqui-->
+  <div class="page-content page-container" id="page-content">
+    <div class="padding">
+        <div class="row container d-flex justify-content-center">
+            <div class="col-lg-16 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h3 class="card-title">Colaboradores con viaje programado para este mes y año</h3>
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th>Nombre del colaborador</th>
+                          <th>Fecha de Inicio</th>
+                          <th>Motivo del viaje</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let solicitud of solicitudes" class="table-row">
+                          <td>{{ solicitud.nombre }}</td>
+                          <td>{{ solicitud.departamento }}</td>
+                          <td>{{ solicitud.motivo}}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div> 
+        </div>
+    </div>
+</div>
+</div>

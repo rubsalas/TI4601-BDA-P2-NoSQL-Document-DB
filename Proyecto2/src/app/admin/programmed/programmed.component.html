@@ -1,18 +1,62 @@
-<div>
-    <label for="mes">Seleccionar mes:</label>
-    <select id="mes">
-      <!-- Opciones para seleccionar el mes -->
-    </select>
+<form class="formulary">
   
-    <label for="ano">Seleccionar año:</label>
-    <select id="ano">
-      <!-- Opciones para seleccionar el año -->
-    </select>
-  
-    <button (click)="buscarViajes()">Buscar</button>
+  <div class="segment">
+      <h1>Consulta de viajes programados</h1>
   </div>
-  
-  <div>
-    <!-- Aquí se mostrará la lista de colaboradores con viajes programados -->
-  </div>
-  
+  <br>
+  <label>
+      <h5>Seleccione el mes:</h5>
+      <select class="rounded-pill" aria-label="Default select example">
+        <option selected>Seleccione una opción</option><!--hacer select dinamicos-->
+        <option *ngFor="let mes of meses" [value]="mes.mes">
+          {{mes.mes}}
+        </option>
+      </select>
+  </label>
+  <label>
+    <h5>Seleccione el año:</h5>
+    <select class="rounded-pill" aria-label="Default select example">
+        <option selected>Seleccione una opción</option><!--hacer select dinamicos-->
+        <option *ngFor="let anno of annos" [value]="anno.anno">
+          {{anno.anno}}
+        </option>
+    </select>
+</label>
+
+</form>
+
+<button class="rounded-pill" (click)="mostrarDiv()" style="margin-left: 260px;">Buscar</button>
+<br><br><br><br>
+
+<div *ngIf="isClosed">
+  <!-- poner la tabla aqui-->
+  <div class="page-content page-container" id="page-content">
+    <div class="padding">
+        <div class="row container d-flex justify-content-center">
+            <div class="col-lg-16 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h3 class="card-title">Colaboradores con viaje programado para este mes y año</h3>
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th>Nombre del colaborador</th>
+                          <th>Departamento</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let solicitud of solicitudes" class="table-row">
+                          <td>{{ solicitud.nombre }}</td>
+                          <td>{{ solicitud.departamento }}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div> 
+        </div>
+    </div>
+</div>
+</div>

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/api.service';
 
 @Component({
   selector: 'app-international',
@@ -6,26 +7,54 @@ import { Component } from '@angular/core';
   styleUrls: ['./international.component.css']
 })
 export class InternationalComponent {
-  // Propiedades para almacenar el trimestre y el año seleccionados
-  
+  updateBtn!: HTMLElement;
+  deleteBtn!: HTMLElement;
+  container!: HTMLElement;
+  isClosed = false;
+  solicitudes: any = [];
+  meses: any = [
+    {mes:"Trimestre 1"},{mes:"Trimestre 2"},{mes:"Trimestre 3"}];
+  annos: any = [];
 
-  trimestres: number[] = [1, 2, 3, 4];
-  anios: number[] = [2023, 2024, 2025]; // Puedes agregar más años según tus necesidades
+  constructor(private el: ElementRef, private api:ApiService) {}
 
-  selectedTrimestre: number | null = null;
-  selectedAno: number | null = null;
+  ngOnInit(): void {
+    this.updateBtn = this.el.nativeElement.querySelector('#mostrarBtn');
+    this.deleteBtn = this.el.nativeElement.querySelector('#ocultarBtn');
+    this.container = this.el.nativeElement.querySelector('#miDiv');
+  }
 
-  // Propiedad para almacenar la lista de colaboradores con viajes internacionales (simulado)
-  colaboradoresConViajes: any[] = [
-    { nombre: 'Colaborador 1', destino: 'País 1', fechaInicio: '2023-01-15' },
-    { nombre: 'Colaborador 2', destino: 'País 2', fechaInicio: '2023-02-20' },
-    // Agrega más colaboradores y viajes internacionales según tu caso
-  ];
+  mostrarDiv(){
+    if(this.isClosed){
+      this.isClosed = false;
+      this.refreshList();
+    }
+    else{
+      this.isClosed = true;
+    }
+  }
 
-  
-  // Función para buscar colaboradores con viajes internacionales
-  buscarViajes() {
-    // Implementa la lógica para buscar y mostrar la lista de colaboradores con viajes internacionales
-    // Utiliza los valores de this.selectedTrimestre y this.selectedAno para realizar la búsqueda
+  // metodo para obtener los datos de la base de datos
+  refreshList(){
+    this.api.getUsers().subscribe(data=>{
+      this.solicitudes = data;
+      console.log(data);
+      
+      // para obtener los meses y aos disponibles en la lista
+      for (let i = 0; i < this.solicitudes.length; i++) {
+        const element = this.solicitudes[i];
+        for (let j = 0; j < this.meses.length; j++) {
+          const element = this.meses[j];
+          
+        }
+      }
+    });
+  }
+
+  obtenerMeses(){
+    
+  }
+  obtenerAos(){
+
   }
 }
