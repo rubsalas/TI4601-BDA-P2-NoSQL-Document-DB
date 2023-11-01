@@ -10,7 +10,7 @@ export class AppComponent implements OnInit{
   title = 'Proyecto2';
   isClosed = false;
   isColab: boolean = true;
-  isAdmin: boolean = false;
+  isAdmin: boolean = true;
   mostrarColabBtn: boolean = false;
   mostrarAdminBtn: boolean = false; 
   closeBtn: boolean = false;

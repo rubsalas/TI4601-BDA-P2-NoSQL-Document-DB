@@ -41,7 +41,6 @@ export class ApiService {
   getLoggedAdmin(){
     return this.loggedAdmin;
   }
-
 }
 
 

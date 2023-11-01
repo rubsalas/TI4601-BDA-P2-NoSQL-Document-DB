@@ -1,1 +1,60 @@
-<p>valoration works!</p>
+<div class="page-content page-container" id="page-content">
+  <div class="padding">
+      <div class="row container d-flex justify-content-center">
+          <div class="col-lg-16 grid-margin stretch-card">
+            <div class="card">
+              <div class="card-body">
+                <h3 class="card-title">VALORACION DE SOLICITUDES</h3>
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Puesto</th>
+                        <th>Departamento</th>
+                        <th>Viaje</th>
+                        <th>Periodo</th>
+                        <th>Detalles</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let solicitud of solicitudes" class="table-row">
+                        <td>{{ solicitud.id }}</td>
+                        <td>{{ solicitud.nombre }}</td>
+                        <td>{{ solicitud.puesto }}</td>
+                        <td>{{ solicitud.departamento }}</td>
+                        <td>
+                          <tr>Tipo: {{ solicitud.tipo }}</tr>
+                          <tr>Destino: {{ solicitud.destino }}</tr>
+                          <tr>Motivo: {{ solicitud.motivo }}</tr>
+                        </td>
+                        
+                        <td>
+                          <tr>Inicio: {{ solicitud.inicio }}</tr>
+                          <tr>Fin: {{ solicitud.fin }}</tr>
+                        </td>
+                        <td>
+                          <tr>Aerolínea: {{solicitud.aerolinea}}</tr>
+                          <tr>Alojamiento: {{solicitud.aerolinea}}</tr>
+                          <tr>Boletos: ${{solicitud.aerolinea}}</tr>
+                          <tr>Transporte: {{solicitud.transporte}}</tr>
+                        </td>   
+                        <td>{{ solicitud.estado }}</td>
+                        <td>
+                          <button (click)="aceptarSolicitud(solicitud)" class="btn btn-primary" style="margin-right: 5px; margin-bottom: 5px; padding-right: 15px; padding-left: 15px;">Aceptar</button>
+                          <button (click)="rechazarSolicitud(solicitud)" class="btn btn-primary" style="margin-bottom: 5px;">Rechazar</button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+      </div>
+  </div>
+</div>
