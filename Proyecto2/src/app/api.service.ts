@@ -7,6 +7,14 @@ import { Observable } from 'rxjs';
 })
 export class ApiService {
   // VARIABLES
+  user: any = {
+    id: '',
+    name: "Juan",
+    email: "juan@example.com",
+    password: "Ejemplo",
+    puesto: "Administrador",
+    department: "depa1"
+  };
   private loggedCollab = false;
   private loggedAdmin = false;
   readonly APIUrl: string ='https://bdap1.azurewebsites.net';

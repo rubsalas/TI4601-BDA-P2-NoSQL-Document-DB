@@ -9,27 +9,39 @@
                     <table class="table">
                       <thead>
                         <tr>
-                          <th>Nombre</th>
-                          <th>Puesto</th>
-                          <th>Departamento</th>
-                          <th>Tipo</th>
-                          <th>Destino</th>
-                          <th>Motivo</th>
-                          <th>Inicio</th>
-                          <th>Fin</th>
-                          <th>Aerolínea</th>
-                          <th>Precio</th>
-                          <th>Alojamiento</th>
-                          <th>transporte</th>
-                          <th>Estado</th>
+                          <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Puesto</th>
+                        <th>Departamento</th>
+                        <th>Viaje</th>
+                        <th>Periodo</th>
+                        <th>Detalles</th>
+                        <th>Estado</th>
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <td>Samso Park</td>
-                          <td>34424433</td>
-                          <td>12 May 2017</td>
-                          <td><label class="badge badge-danger">Pending</label></td>
+                        <tr *ngFor="let soli of realizadas">
+                          <td>{{ soli.id }}</td>
+                        <td>{{ soli.nombre }}</td>
+                        <td>{{ soli.puesto }}</td>
+                        <td>{{ soli.departamento }}</td>
+                        <td>
+                          <tr>Tipo: {{ soli.tipo }}</tr>
+                          <tr>Destino: {{ soli.destino }}</tr>
+                          <tr>Motivo: {{ soli.motivo }}</tr>
+                        </td>
+                        
+                        <td>
+                          <tr>Inicio: {{ soli.inicio }}</tr>
+                          <tr>Fin: {{ soli.fin }}</tr>
+                        </td>
+                        <td>
+                          <tr>Aerolínea: {{soli.aerolinea}}</tr>
+                          <tr>Alojamiento: {{soli.aerolinea}}</tr>
+                          <tr>Boletos: ${{soli.aerolinea}}</tr>
+                          <tr>Transporte: {{soli.transporte}}</tr>
+                        </td>   
+                        <td>{{ soli.state }}</td>
                         </tr>
                       </tbody>
                     </table>
@@ -37,7 +49,6 @@
                 </div>
               </div>
             </div>
-            
         </div>
     </div>
 </div>

@@ -19,14 +19,15 @@ export class LoginComponent implements OnInit{
   constructor(private el: ElementRef, private api:ApiService, private app:AppComponent, private formBuilder:FormBuilder) { 
     // formato del formulario para inicio de sesion
     this.loginForm = this.formBuilder.group({
-      email: '',
-      password: ''
+      correo: '',
+      contra: ''
     });
     this.signUpForm = this.formBuilder.group({
-      name: '',
-      email: '',
-      password: '',
-      //rol: ''
+      nombre: '',
+      correo: '',
+      contra: '',
+      puesto: '',
+      depa: ''
     });
    }
 
@@ -53,21 +54,23 @@ export class LoginComponent implements OnInit{
     this.api.getUsers().subscribe(data=>{
       this.usrList = data;
       console.log(data);
-    });
 
-    // recorrer la lista y verificar que tipo de usuario es ----->
-    for (let i = 0; i < this.usrList.length; i++) {
-      // si es admin y la cuenta existe
-      if(this.usrList[i].rol == "administrator" && loginData.email == this.usrList[i].email && loginData.password == this.usrList[i].password){
-        this.api.setLoggedAdmin(true);
-        break;
+      // recorrer la lista y verificar que tipo de usuario es ----->
+      for (let i = 0; i < this.usrList.length; i++) {
+        // si es admin y la cuenta existe
+        if(this.usrList[i].puesto == "administrador" && loginData.email == this.usrList[i].email && loginData.password == this.usrList[i].password){
+          this.api.setLoggedAdmin(true);
+          this.api.user = this.usrList[i]; // se guarda los datos de la sesion del usuario
+          break;
+        }
+        // si es colaborador y la cuenta existe
+        else if(loginData.email == this.usrList[i].email && loginData.password == this.usrList[i].password){
+          this.api.setLoggedCollab(true);
+          this.api.user = this.usrList[i]; // se guarda los datos de la sesion del usuario
+          break;
+        }
       }
-      // si es colaborador y la cuenta existe
-      else if(this.usrList[i].rol == "collaborator"  && loginData.email == this.usrList[i].email && loginData.password == this.usrList[i].password){
-        this.api.setLoggedCollab(true);
-        break;
-      }
-    }
+    });
 
     // dar acceso al usuario segun su rol
     const collabLogged = this.api.getLoggedCollab();
@@ -91,17 +94,13 @@ export class LoginComponent implements OnInit{
 
   // crear cuenta nueva
   createAccount(accountData:any){
-    if(accountData.nombre != '' && accountData.email != '' && accountData.password != ''){
+    if(accountData.nombre != '' && accountData.email != '' && accountData.password != '' && accountData.rol != ''&& accountData.department !=''){
       // hacer post del nuevo usuario
+      console.log(accountData);
+      
       this.api.addUsr(accountData).subscribe(
-        response => {
-          // Maneja la respuesta del servidor aquí
-          console.log('Respuesta del servidor:', response);
-        },
-        error => {
-          // Maneja los errores aquí
-          console.error('Error en la solicitud POST:', error);
-        }
+        response => {console.log('Respuesta del servidor:', response);},
+        error => {console.error('Error en la solicitud POST:', error);}
       );
       // mostrar alreta de creacion de cuenta exitosa
       this.alertaOkReg();

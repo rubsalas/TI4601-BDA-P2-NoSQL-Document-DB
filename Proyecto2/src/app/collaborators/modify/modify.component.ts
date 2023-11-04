@@ -1,4 +1,6 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/api.service';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-modify',
@@ -6,17 +8,42 @@ import { Component, ElementRef, OnInit } from '@angular/core';
   styleUrls: ['./modify.component.css']
 })
 export class ModifyComponent implements OnInit{
-  updateBtn!: HTMLElement;
-  deleteBtn!: HTMLElement;
-  container!: HTMLElement;
   isClosed = false;
+  registerForm: any;
+  solicitudes: any = [];
+  realizadas: any = [];
 
-  constructor(private el: ElementRef) {}
+  constructor (private api:ApiService, private formBuilder:FormBuilder){
+    this.registerForm = this.formBuilder.group({
+      tipo: '',
+      destino:'',
+      motivo:'',
+      inicio:'',
+      fin:'',
+      aerolinea:'',
+      precio:'',
+      alojamiento:'',
+      transporte:''
+    });
+  }
 
   ngOnInit(): void {
-    this.updateBtn = this.el.nativeElement.querySelector('#mostrarBtn');
-    this.deleteBtn = this.el.nativeElement.querySelector('#ocultarBtn');
-    this.container = this.el.nativeElement.querySelector('#miDiv');
+    this.getViajes();
+  }
+
+  // obtener los viajes solicitados
+  getViajes(){
+    this.api.getSolicitudes().subscribe(data=>{
+      this.solicitudes = data;
+      console.log(data);
+      // filtrar peticiones por nombre de usuario loggeado
+      for (let i = 0; i < this.solicitudes.length; i++) {
+        // guardarlas en la lista solicitudes
+        if(this.solicitudes[i] == this.api.user.id){
+          this.realizadas.push(this.solicitudes[i])
+        }        
+      }
+    });
   }
 
   mostrarDiv(){
@@ -26,6 +53,36 @@ export class ModifyComponent implements OnInit{
     else{
       this.isClosed = true;
     }
+  }
+
+  onSubmit(invData:any){
+    let tempData = {
+      id: this.api.user.id,
+      tipo: invData.tipo,
+      destino:invData.destino,
+      motivo:invData.motivo,
+      inicio:invData.inicio,
+      fin:invData.fin,
+      aerolinea:invData.aerolinea,
+      precio:invData.precio,
+      alojamiento:invData.alojamiento,
+      transporte:invData.transporte,
+      estado:"Pendiente"
+    }
+    console.log(invData);
+    
+    this.api.addSolicitud(tempData).subscribe( // si no sirve, usar stringify
+      response => {
+        // Maneja la respuesta del servidor aquí
+        console.log('Respuesta del servidor:', response);
+      },
+      error => {
+        // Maneja los errores aquí
+        console.error('Error en la solicitud POST:', error);
+      }
+    );
+    const formulario = document.getElementById("miFormulario") as HTMLFormElement;
+    formulario.reset();
   }
 
   eliminar(){

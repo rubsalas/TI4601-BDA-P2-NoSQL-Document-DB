@@ -14,7 +14,6 @@ import { ValorationComponent } from './admin/valoration/valoration.component';
 import { ProgrammedComponent } from './admin/programmed/programmed.component';
 import { InternationalComponent } from './admin/international/international.component';
 import { DestinationComponent } from './admin/destination/destination.component';
-import { DeleteComponent } from './collaborators/delete/delete.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +26,6 @@ import { DeleteComponent } from './collaborators/delete/delete.component';
     ProgrammedComponent,
     InternationalComponent,
     DestinationComponent,
-    DeleteComponent
   ],
   imports: [
     BrowserModule,

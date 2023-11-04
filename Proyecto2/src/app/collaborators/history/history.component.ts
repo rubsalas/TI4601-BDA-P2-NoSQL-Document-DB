@@ -7,16 +7,28 @@ import { ApiService } from 'src/app/api.service';
   styleUrls: ['./history.component.css']
 })
 export class HistoryComponent implements OnInit{
-  constructor(private service:ApiService) { }
+  constructor(private api:ApiService) { }
 
-  InvestigatorList : any = []; // para guardar los datos que se obtienen de la peticion a la base de datos
+  solicitudes: any = []; // para guardar los datos que se obtienen de la peticion a la base de datos
+  realizadas: any = [];
 
   ngOnInit(): void {
-    this.refreshInvestigatorList();
+    this.refreshSolicitudList();
   }
 
   // metodo para obtener los datos de la base de datos
-  refreshInvestigatorList(){
-
+  refreshSolicitudList(){
+    // get de todas las peticiones
+    this.api.getSolicitudes().subscribe(data=>{
+      this.solicitudes = data;
+      console.log(data);
+      // filtrar peticiones por nombre de usuario loggeado
+      for (let i = 0; i < this.solicitudes.length; i++) {
+        // guardarlas en la lista solicitudes
+        if(this.solicitudes[i] == this.api.user.name){
+          this.realizadas.push(this.solicitudes[i])
+        }        
+      }
+    });
   }
 }

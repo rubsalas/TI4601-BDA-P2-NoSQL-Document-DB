@@ -1,61 +1,52 @@
-<form class="formulary">
+<form class="formulary" [formGroup]="registerForm" (ngSubmit)="onSubmit(registerForm.value)">
   
     <div class="segment">
         <h1>Registro de viajes</h1>
     </div>
+    <br>
+    
     <label>
-        <input class="rounded-pill" type="text" placeholder="Nombre Completo"/>
+        <input class="rounded-pill" type="text" placeholder="País Destino" formControlName="destino"/>
+    </label>
+    
+    <label>
+        <input type="text" class="rounded-pill" placeholder="Fecha de Inicio del Viaje (dd/mm/aaaa)" required aria-label="Date input 3 (using aria-label)" formControlName="inicio">
     </label>
     <label>
-        <input class="rounded-pill" type="text" placeholder="Puesto"/>
+        <input type="text" class="rounded-pill" placeholder="Fecha de Finalización del Viaje (dd/mm/aaaa)" required aria-label="Date input 3 (using aria-label)" formControlName="fin">
     </label>
     <label>
-        <input class="rounded-pill" type="text" placeholder="Departamento"/>
+        <input class="rounded-pill" type="text" placeholder="Nombre de la Aerolínea" formControlName="aerolinea"/>
+    </label>
+    <label>
+        <input class="rounded-pill" type="number" min="0" placeholder="Precio de los boletos" formControlName="precio"/>
+    </label>
+    <label>
+        <input class="rounded-pill" type="text" placeholder="Nombre del Alojamiento" formControlName="alojamiento"/>
     </label>
     <label>
         <h5>Seleccione el tipo de viaje:</h5>
-        <select class="rounded-pill" aria-label="Default select example">
-            <option selected>Seleccione una opción</option>
-            <option value="si">Internacional</option>
-            <option value="no">Local</option>
+        <select class="rounded-pill" aria-label="Default select example" formControlName="tipo">
+            <option value="Internacional">Internacional</option>
+            <option value="Local">Local</option>
         </select>
     </label>
     <label>
-        <input class="rounded-pill" type="text" placeholder="País Destino"/>
-    </label>
-    <label>
         <h5>Seleccione el motivo del viaje:</h5>
-        <select class="rounded-pill" aria-label="Default select example">
-            <option selected>Seleccione una opción</option>
+        <select class="rounded-pill" aria-label="Default select example" formControlName="motivo">
             <option value="Seguimiento">Seguimiento</option>
             <option value="Cierre de venta">Cierre de venta</option>
             <option value="Capacitacion">Capacitación</option>
         </select>
     </label>
     <label>
-        <input type="text" class="rounded-pill" placeholder="Fecha de Inicio del Viaje (dd/mm/aaaa)" required aria-label="Date input 3 (using aria-label)">
-    </label>
-    <label>
-        <input type="text" class="rounded-pill" placeholder="Fecha de Finalización del Viaje (dd/mm/aaaa)" required aria-label="Date input 3 (using aria-label)">
-    </label>
-    <label>
-        <input class="rounded-pill" type="text" placeholder="Nombre de la Aerolínea"/>
-    </label>
-    <label>
-        <input class="rounded-pill" type="number" min="0" placeholder="Precio de los boletos"/>
-    </label>
-    <label>
-        <input class="rounded-pill" type="text" placeholder="Nombre del Alojamiento"/>
-    </label>
-    <label>
         <h5>Requiere transporte?</h5>
-        <select class="rounded-pill" aria-label="Default select example">
-            <option selected>Seleccione una opción</option>
+        <select class="rounded-pill" aria-label="Default select example" formControlName="transporte">
             <option value="si">Sí</option>
             <option value="no">No</option>
         </select>
     </label>
-
-    <button class="rounded-pill" type="button"><i class="icon ion-md-lock"></i>Registrar Viaje</button>
+    <br>
+    <button class="rounded-pill"><i class="icon ion-md-lock"></i>Registrar Viaje</button>
       <br><br><br><br>
   </form>

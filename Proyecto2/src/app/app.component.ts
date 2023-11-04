@@ -14,6 +14,7 @@ export class AppComponent implements OnInit{
   mostrarColabBtn: boolean = false;
   mostrarAdminBtn: boolean = false; 
   closeBtn: boolean = false;
+  nombre:string = "User";
 
   constructor(private api:ApiService){ }
 
@@ -31,14 +32,17 @@ export class AppComponent implements OnInit{
   checkLogged(){
     // hacer get de servicio para ver si esta logeado o no y actualizar la variable logged a true o false
     // modificar estas condiciones para mostrar solo los botones del usuario loggeado
+    
 
     if(this.isColab){
       this.mostrarColabBtn = true;
       this.closeBtn = true;
+      this.nombre = this.api.user.name;
     }
     if(this.isAdmin){
       this.mostrarAdminBtn = true;
       this.closeBtn = true;
+      this.nombre = this.api.user.name;
     }
   }
 
