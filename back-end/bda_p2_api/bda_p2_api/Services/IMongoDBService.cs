@@ -1,37 +1,54 @@
 ﻿using bda_p2_api.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace bda_p2_api.Services
 {
     public interface IMongoDBService
     {
 
-        Task<List<Administrator>> GetAllAdministrators();
+        /* **************************************************** Administradores **************************************************** */
 
-        Task<Administrator> GetAdministrator(string id);
+        Task<List<Administrator>> GetAllAdministrators(); // NN
 
-        Task AddAdministrator(Administrator administrator);
+        Task<Administrator> GetAdministrator(string id); // 2.
 
-        // AddAdministrators(List<Administrator> administrators);
+        Task RegisterAdministrator(Administrator administrator); // 1.
 
-        // UpdateAdministrator(string id, Administrator administrator)
+        // UpdateAdministrator(string id, Administrator administrator) // NN
 
-        Task DeleteAdministrator(string id);
+        Task DeleteAdministrator(string id); // NN
 
-        /* ******************************************************************************************************************************** */
+        /* ***************************************************** Colaboradores ***************************************************** */
 
-        Task<List<Collaborator>> GetAllCollaborators();
+        Task<List<Collaborator>> GetAllCollaborators(); // NN
 
-        Task<Collaborator> GetCollaborator(string id);
+        Task<Collaborator> GetCollaborator(string id); // 9.
 
-        Task AddCollaborator(Collaborator collaborator);
+        // Task<List<CollaboratorDepartment>>  GetCollaboratorsWithScheduledTrips(int month, int year) // 5. (new model)
 
-        // AddCollaborators(List<Collaborator> collaborator);
+        // Task<List<CollaboratorDestination>>  GetCollaboratorsWithInternationalTrips(int trimester, int year) // 6. (new model)
+
+        Task RegisterCollaborator(Collaborator collaborator); // 8.
 
         // UpdateCollaborator(string id, Collaborator collaborator)
 
-        Task DeleteCollaborator(string id);
+        Task DeleteCollaborator(string id); // NN
 
-        Task AddRequest(string id, Request request);
+        /* ****************************************************** Solicitudes ****************************************************** */
+
+        Task<List<Request>> GetPendingRequests(); // 3.
+
+        Task<List<Request>> GetCollaboratorsRequests(string id); // 11.
+
+        // Task<List<CollaboratorTrip>>  GetRequestsToDestination(string destination) // 7. (new model)
+
+        Task<Collaborator> MakeRequest(string id, Request request); // 10.
+
+        // Task ValidateRequests(List<RequestValidation> validatedRequests) // 4. (new model)
+
+        // Task UpdateRequest(Request request) // 12.
+
+        // Task DeleteRequest(); // 13.
 
     }
 }

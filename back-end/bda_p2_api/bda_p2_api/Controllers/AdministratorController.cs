@@ -24,6 +24,11 @@ namespace bda_p2_api.Controllers
             return await _administratorService.GetAllAdministrators();
         }
 
+        /// <summary>
+        /// Request que obtiene un Administrador de la base de datos.
+        /// </summary>
+        /// <param name="id">Id del Administrador por buscar.</param>
+        /// <returns>Modelo del Administrador que se encuentra.</returns>
         [HttpGet("{id}")]
         public async Task<ActionResult<Administrator>> GetAdministrator(string id)
         {
@@ -33,10 +38,15 @@ namespace bda_p2_api.Controllers
             return Ok(result);
         }
 
+        /// <summary>
+        /// Request para agregar un Administrador en la base de datos.
+        /// </summary>
+        /// <param name="id">Modelo del Administrador por agregar.</param>
+        /// <returns></returns>
         [HttpPost]
-        public async Task<IActionResult> AddAdministrators(Administrator administrator)
+        public async Task<IActionResult> RegisterAdministrators(Administrator administrator)
         {
-            await _administratorService.AddAdministrator(administrator);
+            await _administratorService.RegisterAdministrator(administrator);
             return CreatedAtAction(nameof(GetAllAdministrators), new { id = administrator.id }, administrator );
         }
 
@@ -45,6 +55,22 @@ namespace bda_p2_api.Controllers
         {
             await _administratorService.DeleteAdministrator(id);
             return NoContent();
+        }
+
+        /* ****************************************************** Solicitudes ****************************************************** */
+
+
+        /// <summary>
+        /// Request para obtener todas las solicitudes que tienen "Pendiente" como estado.
+        /// </summary>
+        /// <returns>Lista de Solicitudes pendientes.</returns>
+        [HttpGet("Request/Pending")]
+        public async Task<ActionResult<List<Request>>> GetPendingRequests()
+        {
+            var result = await _administratorService.GetPendingRequests();
+            if (result is null)
+                return NotFound(string.Format("There are no pending requests."));
+            return Ok(result);
         }
 
     }

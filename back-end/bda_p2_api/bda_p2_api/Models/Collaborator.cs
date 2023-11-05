@@ -7,13 +7,18 @@ namespace bda_p2_api.Models
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
-        public string id { get; set; } = string.Empty;
-        public string nombre { get; set; } = string.Empty;
-        public string correo{ get; set; } = string.Empty;
-        public string contra { get; set; } = string.Empty;
-        public string puesto { get; set; } = string.Empty;
-        public string depa { get; set; } = string.Empty;
-        public List<Request> solicitudes { get; set; }
+        public string? id { get; set; } = string.Empty;
 
+        public string? nombre { get; set; } = string.Empty;
+
+        public string? correo{ get; set; } = string.Empty;
+
+        public string? contra { get; set; } = string.Empty;
+
+        public string? puesto { get; set; } = string.Empty;
+
+        public string? depa { get; set; } = string.Empty;
+        
+        public List<Request>? solicitudes { get; set; }
     }
 }

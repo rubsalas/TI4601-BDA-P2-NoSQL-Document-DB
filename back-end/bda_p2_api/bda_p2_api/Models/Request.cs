@@ -5,6 +5,7 @@ namespace bda_p2_api.Models
 {
     public class Request
     {
+        public string? id { get; set; }
         public string? tipo {  get; set; }
 
         public string? destino { get; set; }
