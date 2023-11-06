@@ -31,6 +31,10 @@ body {
     -ms-box-shadow: none
 }
 
+.accent{
+    font-weight: bold;
+}
+
 .pl-3,
 .px-3 {
     padding-left: 1rem !important

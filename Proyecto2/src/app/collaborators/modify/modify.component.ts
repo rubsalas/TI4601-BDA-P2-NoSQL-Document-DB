@@ -136,6 +136,9 @@ export class ModifyComponent implements OnInit{
   }
 
   eliminar(data:any){
+    console.log(data);
+    
+    
     this.api.deleteSolicitud(this.api.user.id, data.id).subscribe(
       response => {
         // Maneja la respuesta del servidor aquí

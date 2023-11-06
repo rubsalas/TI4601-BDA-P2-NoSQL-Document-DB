@@ -3,18 +3,18 @@ import { ApiService } from 'src/app/api.service';
 
 // Define la interfaz Solicitud directamente en este archivo
 interface Solicitud {
-  id: number;
-  nombre: string;
-  motivo: string;
-  estado: string;
-  destino: string;
-  puesto: string;
-  departamento: string;
-  tipo: string;
-  inicio: string;
-  fin: string;
-  aerolinea: string;
-  transporte: string;
+  id: string,
+  rid:string,
+  tipo: string,
+  destino:string,
+  motivo:string,
+  inicio:string,
+  final:string,
+  aerolinea:string,
+  precio:string,
+  alojamiento:string,
+  transporte:string,
+  estado: string
 }
 
 @Component({
@@ -34,18 +34,58 @@ export class ValorationComponent implements OnInit{
 
   /** Se acepta la solicitud */
   aceptarSolicitud(solicitud: Solicitud): void {
-    solicitud.estado = 'Aceptado';// en lugar de hacer esto,
-    // hacer un put a la base de datos con el id de solicitud y el estado aceptado
+    
+    let tempData:any = {
+      tipo: solicitud.tipo,
+      destino:solicitud.destino,
+      motivo:solicitud.motivo,
+      inicio:solicitud.inicio,
+      final:solicitud.final,
+      aerolinea:solicitud.aerolinea,
+      precio:solicitud.precio,
+      alojamiento:solicitud.alojamiento,
+      transporte:solicitud.transporte,
+      estado: 'Aceptado'
+    }
 
-    // refrescar lista luego de hacer el put
-    this.refreshList();
+    // hacer un put a la base de datos con el id de solicitud y el estado aceptado
+    this.api.putSolicitud(solicitud.id, solicitud.rid, tempData).subscribe(
+      response => {
+        // Maneja la respuesta del servidor aquí
+        console.log('Respuesta del servidor:', response);
+      },
+      error => {
+        // Maneja los errores aquí
+        console.error('Error en la solicitud POST:', error);
+      }
+    );
   }
   /** Se rechaza la solicitud */
   rechazarSolicitud(solicitud: Solicitud): void {
-    solicitud.estado = 'Rechazado';// en lugar de hacer esto,
-    // hacer un put a la base de datos con el id de solicitud y el estado rechazado
+    let tempData:any = {
+      tipo: solicitud.tipo,
+      destino:solicitud.destino,
+      motivo:solicitud.motivo,
+      inicio:solicitud.inicio,
+      final:solicitud.final,
+      aerolinea:solicitud.aerolinea,
+      precio:solicitud.precio,
+      alojamiento:solicitud.alojamiento,
+      transporte:solicitud.transporte,
+      estado: 'Rechazado'
+    }
 
-    // refrescar lista luego de hacer el put
+    // hacer un put a la base de datos con el id de solicitud y el estado aceptado
+    this.api.putSolicitud(solicitud.id, solicitud.rid, tempData).subscribe(
+      response => {
+        // Maneja la respuesta del servidor aquí
+        console.log('Respuesta del servidor:', response);
+      },
+      error => {
+        // Maneja los errores aquí
+        console.error('Error en la solicitud POST:', error);
+      }
+    );
   }
 
   refreshList(){
@@ -61,6 +101,7 @@ export class ValorationComponent implements OnInit{
           // haga una solicitud nueva y la agrega a una lista que es la que va a mostrar
           let temp = {
             id:this.solicitudes[i].id,
+            rid:this.solicitudes[i].solicitudes[j].id,
             nombre:this.solicitudes[i].nombre,
             correo:this.solicitudes[i].correo,
             contra:this.solicitudes[i].contra,
@@ -77,7 +118,6 @@ export class ValorationComponent implements OnInit{
             transporte:this.solicitudes[i].solicitudes[j].transporte,
             estado:this.solicitudes[i].solicitudes[j].estado
           }
-          console.log(temp);
           
           // si el estado es Pendiente
           if (this.solicitudes[i].solicitudes[j].estado == "Pendiente") {
@@ -85,7 +125,6 @@ export class ValorationComponent implements OnInit{
           }      
         }
       }
-      console.log(this.soli);
     }); 
   }
 }

@@ -55,7 +55,7 @@ export class ApiService {
 
   deleteSolicitud(id: any, rid:any): Observable<any> {
     // Realiza una solicitud DELETE a la URL de la API con el ID del recurso a eliminar
-    return this.http.delete<any>(this.APIUrl+'/api/Collaborator/'+`${id}`+'/Request'+`${rid}`);
+    return this.http.delete<any>(this.APIUrl+'/api/Collaborator/'+`${id}`+'/Request/'+`${rid}`);
   }
   
 
