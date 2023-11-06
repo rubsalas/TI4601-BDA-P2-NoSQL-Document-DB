@@ -3,17 +3,18 @@ using Microsoft.Extensions.Options;
 using MongoDB.Driver;
 using MongoDB.Bson;
 
+
 namespace bda_p2_api.Services
 {
-    public class MongoDBService1 : IMongoDBService
+    public class MongoDBService2 : IMongoDBService
     {
         private readonly IMongoCollection<Administrator> _administratorsCollection;
         private readonly IMongoCollection<Collaborator> _collaboratorsCollection;
 
-        public MongoDBService1(IOptions<MongoDBSettings> mongoDBSettings)
+        public MongoDBService2(IOptions<MongoDBSettings> mongoDBSettings)
         {
-            MongoClient client = new MongoClient("mongodb+srv://cbdap2-1:cbdap2-1@clusterbdap2-1.qxq3tsq.mongodb.net/?retryWrites=true&w=majority");
-            IMongoDatabase database = client.GetDatabase("bdap2-1");
+            MongoClient client = new MongoClient("mongodb+srv://cbdap2-2:cbdap2-2@clusterbdap2-2.lsmrdqo.mongodb.net/?retryWrites=true&w=majority");
+            IMongoDatabase database = client.GetDatabase("bdap2-2");
             _administratorsCollection = database.GetCollection<Administrator>("Administradores");
             _collaboratorsCollection = database.GetCollection<Collaborator>("Colaboradores");
         }
@@ -43,7 +44,7 @@ namespace bda_p2_api.Services
         /// <summary>
         /// Registra un Administrador.
         /// </summary>
-        /// <param name="administrator">Modelo del Administrador por registrar.</param>
+        /// <param name="id">Modelo del Administrador por registrar.</param>
         /// <returns></returns>
         public async Task RegisterAdministrator(Administrator administrator)
         {
@@ -51,11 +52,6 @@ namespace bda_p2_api.Services
             return;
         }
 
-        /// <summary>
-        /// Elimina un Administrador.
-        /// </summary>
-        /// <param name="id">Id del Administrador por eliminar.</param>
-        /// <returns></returns>
         public async Task DeleteAdministrator(string id)
         {
             FilterDefinition<Administrator> filter = Builders<Administrator>.Filter.Eq("id", id);

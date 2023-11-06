@@ -30,7 +30,7 @@ namespace bda_p2_api.Services
 
         Task RegisterCollaborator(Collaborator collaborator); // 8.
 
-        // UpdateCollaborator(string id, Collaborator collaborator)
+        // UpdateCollaborator(string id, Collaborator collaborator) // NN
 
         Task DeleteCollaborator(string id); // NN
 
@@ -46,9 +46,9 @@ namespace bda_p2_api.Services
 
         // Task ValidateRequests(List<RequestValidation> validatedRequests) // 4. (new model)
 
-        // Task UpdateRequest(Request request) // 12.
+        Task<Collaborator> UpdateRequest(string cid, string rid, Request request); // 12.
 
-        // Task DeleteRequest(); // 13.
+        Task<Collaborator> DeleteRequest(string cid, string rid); // 13.
 
     }
 }

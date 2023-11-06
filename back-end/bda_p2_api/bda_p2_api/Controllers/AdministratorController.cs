@@ -1,7 +1,5 @@
-﻿using System;
-using bda_p2_api.Models;
+﻿using bda_p2_api.Models;
 using bda_p2_api.Services;
-using bda_p2_api.Services.AdministratorService;
 using Microsoft.AspNetCore.Mvc;
 
 namespace bda_p2_api.Controllers
@@ -10,18 +8,22 @@ namespace bda_p2_api.Controllers
     [ApiController]
     public class AdministratorController : Controller
     {
-        private readonly MongoDBService1 _administratorService;
+        private readonly MongoDBService1 _administratorService1;
+        private readonly MongoDBService2 _administratorService2;
+        private readonly MongoDBService3 _administratorService3;
 
         // Constructor
-        public AdministratorController(MongoDBService1 administratorService)
+        public AdministratorController(MongoDBService1 administratorService1, MongoDBService2 administratorService2, MongoDBService3 administratorService3)
         {
-            _administratorService = administratorService;
+            _administratorService1 = administratorService1;
+            _administratorService2 = administratorService2;
+            _administratorService3 = administratorService3;
         }
 
         [HttpGet]
         public async Task<List<Administrator>> GetAllAdministrators()
         {
-            return await _administratorService.GetAllAdministrators();
+            return await _administratorService1.GetAllAdministrators();
         }
 
         /// <summary>
@@ -32,7 +34,7 @@ namespace bda_p2_api.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Administrator>> GetAdministrator(string id)
         {
-            var result = await _administratorService.GetAdministrator(id);
+            var result = await _administratorService1.GetAdministrator(id);
             if (result is null)
                 return NotFound(string.Format("There is no administrator with id = {0}.", id));
             return Ok(result);
@@ -45,16 +47,28 @@ namespace bda_p2_api.Controllers
         /// <returns></returns>
         [HttpPost]
         public async Task<IActionResult> RegisterAdministrators(Administrator administrator)
-        {
-            await _administratorService.RegisterAdministrator(administrator);
+        {   
+            // BDAP2-1
+            await _administratorService1.RegisterAdministrator(administrator);
+            // BDAP2-2
+            await _administratorService2.RegisterAdministrator(administrator);
+            // BDAP2-3
+            await _administratorService3.RegisterAdministrator(administrator);
+
             return CreatedAtAction(nameof(GetAllAdministrators), new { id = administrator.id }, administrator );
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAdministrator(string id)
         {
-            await _administratorService.DeleteAdministrator(id);
-            return NoContent();
+            // BDAP2-1
+            await _administratorService1.DeleteAdministrator(id);
+            // BDAP2-2
+            await _administratorService2.DeleteAdministrator(id);
+            // BDAP2-3
+            await _administratorService3.DeleteAdministrator(id);
+
+            return Ok();
         }
 
         /* ****************************************************** Solicitudes ****************************************************** */
@@ -67,7 +81,7 @@ namespace bda_p2_api.Controllers
         [HttpGet("Request/Pending")]
         public async Task<ActionResult<List<Request>>> GetPendingRequests()
         {
-            var result = await _administratorService.GetPendingRequests();
+            var result = await _administratorService1.GetPendingRequests();
             if (result is null)
                 return NotFound(string.Format("There are no pending requests."));
             return Ok(result);
