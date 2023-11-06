@@ -14,6 +14,7 @@ import { ValorationComponent } from './admin/valoration/valoration.component';
 import { ProgrammedComponent } from './admin/programmed/programmed.component';
 import { InternationalComponent } from './admin/international/international.component';
 import { DestinationComponent } from './admin/destination/destination.component';
+import { ApiService } from './api.service';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,7 @@ import { DestinationComponent } from './admin/destination/destination.component'
       {path: '', redirectTo: '/login', pathMatch: 'full'},
     ]),
   ],
-  providers: [],
+  providers: [ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

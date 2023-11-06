@@ -17,7 +17,7 @@ export class RegisterComponent {
       destino:'',
       motivo:'',
       inicio:'',
-      fin:'',
+      final:'',
       aerolinea:'',
       precio:'',
       alojamiento:'',
@@ -27,19 +27,23 @@ export class RegisterComponent {
   
   onSubmit(invData:any){
     let tempData = {
-      id: this.api.user.id,
-      tipo: invData.type,
-      destino:invData.destination,
-      motivo:invData.reason,
+      tipo: invData.tipo,
+      destino:invData.destino,
+      motivo:invData.motivo,
       inicio:invData.inicio,
-      fin:invData.fin,
+      final:invData.final,
       aerolinea:invData.aerolinea,
       precio:invData.precio,
       alojamiento:invData.alojamiento,
       transporte:invData.transporte,
       estado:"Pendiente"
     }
-    this.api.addSolicitud(tempData).subscribe( // si no sirve, usar stringify
+    let usuarioId = this.api.user.id;
+    console.log(usuarioId);
+    console.log(tempData);
+    
+    
+    this.api.addSolicitud(usuarioId, tempData).subscribe( // si no sirve, usar stringify
       response => {
         // Maneja la respuesta del servidor aquí
         console.log('Respuesta del servidor:', response);

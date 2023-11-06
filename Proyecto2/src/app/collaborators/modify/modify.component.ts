@@ -10,20 +10,37 @@ import { FormBuilder } from '@angular/forms';
 export class ModifyComponent implements OnInit{
   isClosed = false;
   registerForm: any;
+  modifyForm:any;
   solicitudes: any = [];
-  realizadas: any = [];
+  rid:any
+  //    dleafe9@dailymotion.com
+  //    rQ68f`
 
   constructor (private api:ApiService, private formBuilder:FormBuilder){
     this.registerForm = this.formBuilder.group({
+      id:'',
       tipo: '',
       destino:'',
       motivo:'',
       inicio:'',
-      fin:'',
+      final:'',
       aerolinea:'',
       precio:'',
       alojamiento:'',
-      transporte:''
+      transporte:'',
+      estado:''
+    });
+    this.modifyForm = this.formBuilder.group({
+      tipo: '',
+      destino:'',
+      motivo:'',
+      inicio:'',
+      final:'',
+      aerolinea:'',
+      precio:'',
+      alojamiento:'',
+      transporte:'',
+      estado:''
     });
   }
 
@@ -33,45 +50,93 @@ export class ModifyComponent implements OnInit{
 
   // obtener los viajes solicitados
   getViajes(){
-    this.api.getSolicitudes().subscribe(data=>{
+    this.solicitudes = []
+    this.api.getCollabId(this.api.user.id).subscribe(data=>{
       this.solicitudes = data;
       console.log(data);
-      // filtrar peticiones por nombre de usuario loggeado
-      for (let i = 0; i < this.solicitudes.length; i++) {
-        // guardarlas en la lista solicitudes
-        if(this.solicitudes[i] == this.api.user.id){
-          this.realizadas.push(this.solicitudes[i])
-        }        
-      }
     });
   }
 
-  mostrarDiv(){
+  mostrarDiv(value:any){
     if(this.isClosed){
       this.isClosed = false;
     }
     else{
       this.isClosed = true;
+      this.rid=value.id
+    
+      for (let i = 0; i < this.solicitudes.length; i++) {
+        if (this.solicitudes[i].id == value.id) {
+          console.log("buenassss");
+          
+          this.registerForm.destino = this.solicitudes[i].destino;
+          this.registerForm.tipo = this.solicitudes[i].tipo;
+          this.registerForm.motivo = this.solicitudes[i].motivo;
+          this.registerForm.inicio = this.solicitudes[i].inicio;
+          this.registerForm.final = this.solicitudes[i].final;
+          this.registerForm.aerolinea = this.solicitudes[i].aerolinea;
+          this.registerForm.precio = this.solicitudes[i].precio;
+          this.registerForm.alojamiento = this.solicitudes[i].alojamiento;
+          this.registerForm.transporte = this.solicitudes[i].transporte;
+          this.registerForm.estado = this.solicitudes[i].estado;
+          break;
+        }      
+      }
     }
   }
 
   onSubmit(invData:any){
-    let tempData = {
+    let tempData:any = {
       id: this.api.user.id,
       tipo: invData.tipo,
       destino:invData.destino,
       motivo:invData.motivo,
       inicio:invData.inicio,
-      fin:invData.fin,
+      final:invData.final,
       aerolinea:invData.aerolinea,
       precio:invData.precio,
       alojamiento:invData.alojamiento,
       transporte:invData.transporte,
-      estado:"Pendiente"
+      estado: this.registerForm.estado
     }
-    console.log(invData);
     
-    this.api.addSolicitud(tempData).subscribe( // si no sirve, usar stringify
+    
+    for (let key in tempData) {
+      if (tempData.hasOwnProperty(key)) {
+        const value = tempData[key];
+        console.log(`Propiedad: ${key}, Valor: ${value}`);
+        if (value == '') {
+          tempData[key] = this.registerForm[key];
+        }
+      }
+    }
+    console.log(tempData);
+
+    if (this.rid != '') {
+      this.api.putSolicitud(this.api.user.id, this.rid, tempData).subscribe(
+        response => {
+          // Maneja la respuesta del servidor aquí
+          console.log('Respuesta del servidor:', response);
+        },
+        error => {
+          // Maneja los errores aquí
+          console.error('Error en la solicitud POST:', error);
+        }
+      );
+    }
+    else{
+      console.log("id de solicitud no encontrado");
+      
+    }
+
+    
+    const formulario = document.getElementById("miFormulario") as HTMLFormElement;
+    formulario.reset();
+    this.getViajes();
+  }
+
+  eliminar(data:any){
+    this.api.deleteSolicitud(this.api.user.id, data.id).subscribe(
       response => {
         // Maneja la respuesta del servidor aquí
         console.log('Respuesta del servidor:', response);
@@ -81,12 +146,6 @@ export class ModifyComponent implements OnInit{
         console.error('Error en la solicitud POST:', error);
       }
     );
-    const formulario = document.getElementById("miFormulario") as HTMLFormElement;
-    formulario.reset();
-  }
-
-  eliminar(){
-    // funcion para eliminar el viaje
   }
 
 }

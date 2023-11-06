@@ -1,52 +1,54 @@
-<form class="formulary">
+<form class="formulary" [formGroup]="registerForm">
     <div class="segment">
         <h1>Modificar solicitud de viaje</h1>
     </div>
     <label>
         <h5>Seleccione el viaje a modificar:</h5>
-        <select class="rounded-pill" aria-label="Default select example" formControlName="">
-            <option *ngFor="let soli of realizadas" [value]="soli.destino">
-                Viaje a {{soli.destino}}
+        <select class="rounded-pill" aria-label="Default select example" formControlName="id">
+            <option *ngFor="let soli of solicitudes" [value]="soli.id">
+                Viaje a {{soli.destino}} el {{soli.inicio}}
             </option>
         </select>
     </label>
+    
+  <button class="rounded-pill" (click)="eliminar(registerForm.value)">Eliminar Viaje</button>
+  <button class="rounded-pill" (click)="mostrarDiv(registerForm.value)">Modificar viaje seleccionado</button>
 </form>
+  <br>
   
-  <button class="rounded-pill" (click)="mostrarDiv()" style="margin-left: 340px;">Modificar viaje seleccionado</button>
-  <button class="rounded-pill" (click)="eliminar()" style="margin-left: 25px;">Eliminar Viaje</button>
   
 
   <div *ngIf="isClosed">
-    <form class="formulary" id="miFormulario" [formGroup]="registerForm" (ngSubmit)="onSubmit(registerForm.value)">        
+    <form class="formulary" id="miFormulario" [formGroup]="modifyForm" (ngSubmit)="onSubmit(modifyForm.value)">        
         <br><br>
         <label>País de destino
-            <input class="rounded-pill" type="text" formControlName="destino"/>
+            <input class="rounded-pill" type="text" formControlName="destino" placeholder="{{registerForm.destino}}"/>
         </label>
         
         <label>Fecha de inicio. (dd/mm/aaaa)
-            <input type="text" class="rounded-pill" required aria-label="Date input 3 (using aria-label)" formControlName="inicio">
+            <input type="text" class="rounded-pill" required aria-label="Date input 3 (using aria-label)" formControlName="inicio" placeholder="{{registerForm.inicio}}">
         </label>
         <label>Fecha de finalización. (dd/mm/aaaa)
-            <input type="text" class="rounded-pill" required aria-label="Date input 3 (using aria-label)" formControlName="fin">
+            <input type="text" class="rounded-pill" required aria-label="Date input 3 (using aria-label)" formControlName="final" placeholder="{{registerForm.final}}">
         </label>
         <label>Nombre de la aerolínea
-            <input class="rounded-pill" type="text" formControlName="aerolinea"/>
+            <input class="rounded-pill" type="text" formControlName="aerolinea" placeholder="{{registerForm.aerolinea}}"/>
         </label>
         <label>Precio de los boletos
-            <input class="rounded-pill" type="number" min="0" formControlName="precio"/>
+            <input class="rounded-pill" type="number" min="0" formControlName="precio" placeholder="{{registerForm.precio}}"/>
         </label>
         <label>Nombre del alojamiento
-            <input class="rounded-pill" type="text" formControlName="alojamiento"/>
+            <input class="rounded-pill" type="text" formControlName="alojamiento" placeholder="{{registerForm.alojamiento}}"/>
         </label>
         <label>
-            <label>Seleccione el tipo de viaje:</label>
+            <label>Seleccione el tipo de viaje: Actual= {{registerForm.tipo}}</label>
             <select class="rounded-pill" aria-label="Default select example" formControlName="tipo">
                 <option value="Internacional">Internacional</option>
                 <option value="Local">Local</option>
             </select>
         </label>
         <label>
-            <label>Seleccione el motivo del viaje:</label>
+            <label>Seleccione el motivo del viaje: Actual= {{registerForm.motivo}}</label>
             <select class="rounded-pill" aria-label="Default select example" formControlName="motivo">
                 <option value="Seguimiento">Seguimiento</option>
                 <option value="Cierre de venta">Cierre de venta</option>
@@ -54,7 +56,7 @@
             </select>
         </label>
         <label>
-            <label>Requiere transporte?</label>
+            <label>Requiere transporte? Actual= {{registerForm.transporte}}</label>
             <select class="rounded-pill" aria-label="Default select example" formControlName="transporte">
                 <option value="si">Sí</option>
                 <option value="no">No</option>

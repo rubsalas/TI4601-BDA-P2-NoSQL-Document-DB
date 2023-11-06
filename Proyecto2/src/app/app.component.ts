@@ -9,12 +9,12 @@ import { ApiService } from './api.service';
 export class AppComponent implements OnInit{
   title = 'Proyecto2';
   isClosed = false;
-  isColab: boolean = true;
-  isAdmin: boolean = true;
+  isColab: boolean = false;
+  isAdmin: boolean = false;
   mostrarColabBtn: boolean = false;
   mostrarAdminBtn: boolean = false; 
   closeBtn: boolean = false;
-  nombre:string = "User";
+  nombre:string = "Usuario";
 
   constructor(private api:ApiService){ }
 
@@ -26,6 +26,8 @@ export class AppComponent implements OnInit{
     const offcanvasToggle = document.querySelector('[data-toggle="offcanvas"]') as HTMLElement;
     offcanvasToggle.addEventListener('click', () => this.toggleOffcanvas());
     this.checkLogged();
+    console.log("bienvenido");
+    
   }
 
   // funcion para verificar si el usuario inicio sesion
@@ -37,12 +39,16 @@ export class AppComponent implements OnInit{
     if(this.isColab){
       this.mostrarColabBtn = true;
       this.closeBtn = true;
-      this.nombre = this.api.user.name;
+      let usr = this.api.getUsr();
+      console.log(usr);
+      this.nombre = usr.nombre;
     }
     if(this.isAdmin){
       this.mostrarAdminBtn = true;
       this.closeBtn = true;
-      this.nombre = this.api.user.name;
+      let usr = this.api.getUsr();
+      console.log(usr);
+      this.nombre = usr.nombre;
     }
   }
 

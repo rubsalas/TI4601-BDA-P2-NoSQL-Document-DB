@@ -21,11 +21,11 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr *ngFor="let solicitud of solicitudes" class="table-row">
+                      <tr *ngFor="let solicitud of soli" class="table-row">
                         <td>{{ solicitud.id }}</td>
                         <td>{{ solicitud.nombre }}</td>
                         <td>{{ solicitud.puesto }}</td>
-                        <td>{{ solicitud.departamento }}</td>
+                        <td>{{ solicitud.depa }}</td>
                         <td>
                           <tr>Tipo: {{ solicitud.tipo }}</tr>
                           <tr>Destino: {{ solicitud.destino }}</tr>
@@ -34,12 +34,12 @@
                         
                         <td>
                           <tr>Inicio: {{ solicitud.inicio }}</tr>
-                          <tr>Fin: {{ solicitud.fin }}</tr>
+                          <tr>Fin: {{ solicitud.final }}</tr>
                         </td>
                         <td>
                           <tr>Aerolínea: {{solicitud.aerolinea}}</tr>
-                          <tr>Alojamiento: {{solicitud.aerolinea}}</tr>
-                          <tr>Boletos: ${{solicitud.aerolinea}}</tr>
+                          <tr>Alojamiento: {{solicitud.alojamiento}}</tr>
+                          <tr>Boletos: ${{solicitud.precio}}</tr>
                           <tr>Transporte: {{solicitud.transporte}}</tr>
                         </td>   
                         <td>{{ solicitud.estado }}</td>

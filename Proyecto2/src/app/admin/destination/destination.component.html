@@ -1,4 +1,4 @@
-<form class="formulary">
+<form class="formulary" [formGroup]="destForm" (ngSubmit)="mostrarDiv(destForm.value)">
   
   <div class="segment">
       <h1>Consulta de viajes por destino</h1>
@@ -6,17 +6,17 @@
   <br>
   <label>
       <h5>Seleccione el destino:</h5>
-      <select class="rounded-pill" aria-label="Default select example">
-        <option selected>Seleccione una opción</option><!--hacer select dinamicos-->
-        <option *ngFor="let sol of solicitudes" [value]="sol.destino">
+      <select class="rounded-pill" aria-label="Default select example" formControlName="destino">
+        <option *ngFor="let sol of soli" [value]="sol.destino">
           {{sol.destino}}
         </option>
       </select>
   </label>
+  <button class="rounded-pill" style="margin-left: 260px;">Consultar</button>
 
 </form>
 
-<button class="rounded-pill" (click)="mostrarDiv()" style="margin-left: 260px;">Consultar</button>
+
 <br><br><br><br>
 
 <div *ngIf="isClosed">
@@ -38,9 +38,9 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <tr *ngFor="let solicitud of solicitudes" class="table-row">
+                        <tr *ngFor="let solicitud of selected" class="table-row">
                           <td>{{ solicitud.nombre }}</td>
-                          <td>{{ solicitud.departamento }}</td>
+                          <td>{{ solicitud.depa }}</td>
                           <td>{{ solicitud.motivo}}</td>
                         </tr>
                       </tbody>

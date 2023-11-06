@@ -5,13 +5,13 @@
         <div class="sidebar-header">
             <div class="sidebar-brand" style="color: aliceblue;">{{nombre}}</div>
         </div>
-        <li *ngIf="mostrarColabBtn"><a href="/register">Registro de viajes</a></li>
-        <li *ngIf="mostrarColabBtn"><a href="/modify">Modificar Solicitud</a></li>
-        <li *ngIf="mostrarColabBtn"><a href="/history">Historial de Solicitudes</a></li>
-        <li *ngIf="mostrarAdminBtn"><a href="/valoration">Valorar Solicitudes</a></li>
-        <li *ngIf="mostrarAdminBtn"><a href="/programmed">Viajes Programados</a></li>
-        <li *ngIf="mostrarAdminBtn"><a href="/international">Viajes Internacionales</a></li>
-        <li *ngIf="mostrarAdminBtn"><a href="/destination">Consultar por Destino</a></li>
+        <li *ngIf="mostrarColabBtn"><a routerLink="/register" >Registro de viajes</a></li>
+        <li *ngIf="mostrarColabBtn"><a routerLink="/modify" >Modificar Solicitud</a></li>
+        <li *ngIf="mostrarColabBtn"><a routerLink="/history" >Historial de Solicitudes</a></li>
+        <li *ngIf="mostrarAdminBtn"><a routerLink="/valoration" >Valorar Solicitudes</a></li>
+        <li *ngIf="mostrarAdminBtn"><a routerLink="/programmed" >Viajes Programados</a></li>
+        <li *ngIf="mostrarAdminBtn"><a routerLink="/international">Viajes Internacionales</a></li>
+        <li *ngIf="mostrarAdminBtn"><a routerLink="/destination">Consultar por Destino</a></li>
         <li *ngIf="closeBtn" (click)="cerrarSesion()"><a href="">Cerrar Sesion</a></li>
        </ul>
    </nav> 

@@ -7,17 +7,18 @@ import { Observable } from 'rxjs';
 })
 export class ApiService {
   // VARIABLES
-  user: any = {
+  public user: any = {
     id: '',
-    name: "Juan",
-    email: "juan@example.com",
-    password: "Ejemplo",
-    puesto: "Administrador",
-    department: "depa1"
+    nombre: "",
+    correo: "",
+    contra: "",
+    puesto: "",
+    depa: ""
   };
-  private loggedCollab = false;
-  private loggedAdmin = false;
-  readonly APIUrl: string ='https://bdap1.azurewebsites.net';
+
+  public loggedCollab = false;
+  public loggedAdmin = false;
+  readonly APIUrl: string ='https://bda-p2-api.azurewebsites.net';
 
   constructor(private http: HttpClient) { }
 
@@ -26,40 +27,49 @@ export class ApiService {
   //------------------------------------------------------------------------>
   
   // registrar usuario 
-  addUsr(form:any):Observable<any>{
-    let direccion = this.APIUrl+'/api/Investigator/Mult';
+  addCollab(form:any):Observable<any>{
+    let direccion = this.APIUrl+'/api/Collaborator';
     console.log(form);
     console.log(direccion)
     return this.http.post<any>(direccion, form);
   }
-
   // get usuarios registrados
-  getUsers():Observable<any[]>{
-    return this.http.get<any>(this.APIUrl+'/api/Publication/Relationship');
+  getCollab():Observable<any[]>{
+    return this.http.get<any>(this.APIUrl+'/api/Collaborator');
+  }
+  // get colaborador por id
+  getCollabId(id:any):Observable<any[]>{
+    return this.http.get<any>(this.APIUrl+'/api/Collaborator/'+`${id}`+'/Request');
   }
 
   // add solicitud
-  addSolicitud(form:any):Observable<any>{
-    let direccion = this.APIUrl+'/api/Investigator/Mult';
+  addSolicitud(id: any, nuevoData: any): Observable<any> {
+    const url = `${this.APIUrl}/api/Collaborator/${id}/Request`;
+    return this.http.post(url, nuevoData);
+  }
+  // put solicitud
+  putSolicitud(id: any, rid:any, nuevoData: any): Observable<any> {
+    const url = `${this.APIUrl}/api/Collaborator/${id}/Request/${rid}`;
+    return this.http.put(url, nuevoData);
+  }
+
+  deleteSolicitud(id: any, rid:any): Observable<any> {
+    // Realiza una solicitud DELETE a la URL de la API con el ID del recurso a eliminar
+    return this.http.delete<any>(this.APIUrl+'/api/Collaborator/'+`${id}`+'/Request'+`${rid}`);
+  }
+  
+
+  // get usuarios registrados
+  getAdmin():Observable<any[]>{
+    return this.http.get<any>(this.APIUrl+'/api/Administrator');
+  }
+
+  // registrar usuario 
+  addAdmin(form:any):Observable<any>{
+    let direccion = this.APIUrl+'/api/Administrator';
     console.log(form);
     console.log(direccion)
     return this.http.post<any>(direccion, form);
-  }
-  // put solicitud
-  putSolicitud(id: number, nuevoData: any): Observable<any> {
-    const url = `${this.APIUrl}/api/Investigator/${id}`;
-    return this.http.put(url, nuevoData);
-  }
-  // delete solicitud
-
-  // get solicitudes
-  getSolicitudes():Observable<any[]>{
-    return this.http.get<any>(this.APIUrl+'/api/Publication/Relationship');
-  }
-  // put solicitud state
-  putSolicitudState(id: number, nuevoData: any): Observable<any> {
-    const url = `${this.APIUrl}/api/Investigator/${id}`;
-    return this.http.put(url, nuevoData);
   }
 
   //---------------------------------->
@@ -71,6 +81,14 @@ export class ApiService {
   setLoggedAdmin(valor:any){
     this.loggedAdmin = valor;
   }
+  setUsr(valor:any){
+    this.user = valor;  
+  }
+
+  getUsr(){
+    return this.user;
+  }
+
   getLoggedCollab(){
     return this.loggedCollab;
   }

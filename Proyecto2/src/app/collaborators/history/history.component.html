@@ -4,15 +4,12 @@
             <div class="col-lg-16 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h3 class="card-title">HISTORIAL DE VIAJES REALIZADOS</h3>
+                  <h3 class="card-title">HISTORIAL DE VIAJES REALIZADOS POR {{nombreUsr}}</h3>
                   <div class="table-responsive">
                     <table class="table">
                       <thead>
                         <tr>
-                          <th>ID</th>
-                        <th>Nombre</th>
-                        <th>Puesto</th>
-                        <th>Departamento</th>
+                        <th>ID</th>
                         <th>Viaje</th>
                         <th>Periodo</th>
                         <th>Detalles</th>
@@ -20,11 +17,8 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <tr *ngFor="let soli of realizadas">
+                        <tr *ngFor="let soli of solicitudes">
                           <td>{{ soli.id }}</td>
-                        <td>{{ soli.nombre }}</td>
-                        <td>{{ soli.puesto }}</td>
-                        <td>{{ soli.departamento }}</td>
                         <td>
                           <tr>Tipo: {{ soli.tipo }}</tr>
                           <tr>Destino: {{ soli.destino }}</tr>
@@ -37,11 +31,11 @@
                         </td>
                         <td>
                           <tr>Aerolínea: {{soli.aerolinea}}</tr>
-                          <tr>Alojamiento: {{soli.aerolinea}}</tr>
-                          <tr>Boletos: ${{soli.aerolinea}}</tr>
+                          <tr>Alojamiento: {{soli.alojamiento}}</tr>
+                          <tr>Boletos: ${{soli.precio}}</tr>
                           <tr>Transporte: {{soli.transporte}}</tr>
                         </td>   
-                        <td>{{ soli.state }}</td>
+                        <td>{{ soli.estado }}</td>
                         </tr>
                       </tbody>
                     </table>

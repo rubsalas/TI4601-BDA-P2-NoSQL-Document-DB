@@ -1,4 +1,4 @@
-<form class="formulary">
+<form class="formulary" [formGroup]="timeForm" (ngSubmit)="mostrarDiv(timeForm.value)">
   
   <div class="segment">
       <h1>Consulta de viajes Internacionales</h1>
@@ -6,26 +6,23 @@
   <br>
   <label>
       <h5>Seleccione el trimestre:</h5>
-      <select class="rounded-pill" aria-label="Default select example">
-        <option selected>Seleccione una opción</option><!--hacer select dinamicos-->
-        <option *ngFor="let mes of meses" [value]="mes.mes">
-          {{mes.mes}}
+      <select class="rounded-pill" aria-label="Default select example" formControlName="trimestre">
+        <option *ngFor="let trim of trimestres" [value]="trim.trim">
+          {{trim.trim}}
         </option>
       </select>
   </label>
   <label>
     <h5>Seleccione el año:</h5>
-    <select class="rounded-pill" aria-label="Default select example">
-        <option selected>Seleccione una opción</option><!--hacer select dinamicos-->
-        <option *ngFor="let anno of annos" [value]="anno.anno">
-          {{anno.anno}}
+    <select class="rounded-pill" aria-label="Default select example" formControlName="anno">
+        <option *ngFor="let anno of annos" [value]="anno">
+          {{anno}}
         </option>
     </select>
 </label>
+<button class="rounded-pill" style="margin-left: 260px;">Buscar</button>
 
 </form>
-
-<button class="rounded-pill" (click)="mostrarDiv()" style="margin-left: 260px;">Buscar</button>
 <br><br><br><br>
 
 <div *ngIf="isClosed">
@@ -46,7 +43,7 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <tr *ngFor="let solicitud of solicitudes" class="table-row">
+                        <tr *ngFor="let solicitud of internacionales" class="table-row">
                           <td>{{ solicitud.nombre }}</td>
                           <td>{{ solicitud.destino }}</td>
                         </tr>
