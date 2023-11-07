@@ -1,0 +1,83 @@
+h5 {
+    font-family: 'Montserrat', sans-serif;
+    color: #61677C;
+    letter-spacing: -0.2px;
+}
+  
+body, html {
+    background-color:#EBECF0;
+}
+    
+body,select, button {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -0.2px;
+    font-size: 16px;
+}
+
+
+.formulary {
+    padding: 0px;
+    width: 600px;
+    margin: 0 auto;
+    margin-top: 0px;
+}
+
+.segment {
+    padding: 16px*2 0;
+    text-align: center;
+    color: black;
+}
+
+button, input, select {
+    border: 0;
+    outline: 0;
+    font-size: 16px;
+    border-radius: 100;
+    padding: 10px;
+    background-color:#EBECF0;
+    text-shadow: 1px 1px 0 #FFF;
+}
+
+label {
+    display:inline-block;
+    margin-right: 60px;
+    margin-bottom: 16px*1.5;
+    width: 100%;
+}
+
+select {
+    margin-right: 16px/2;
+    box-shadow:  inset 2px 2px 5px #BABECC, inset -5px -5px 10px #FFF;
+    width: 100%;
+    box-sizing: border-box;
+    transition: all 0.2s ease-in-out;
+    appearance: none;
+    -webkit-appearance: none;
+    
+    &:focus {
+        box-shadow:  inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
+    }
+}
+
+button {
+    color:#002096;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-weight: bold;
+    box-shadow: -5px -5px 20px #FFF,  5px 5px 20px #BABECC;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    font-weight: 600;
+    
+    &:hover {
+    box-shadow: -2px -2px 5px #FFF, 2px 2px 5px #BABECC;
+    }
+    
+    &:active {
+    box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
+    }
+}
+
+
+    
+    

@@ -1,0 +1,23 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Motivo</th>
+      <th>Estado</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let solicitud of solicitudes" class="table-row">
+      <td>{{ solicitud.id }}</td>
+      <td>{{ solicitud.nombre }}</td>
+      <td>{{ solicitud.motivo }}</td>
+      <td>{{ solicitud.estado }}</td>
+      <td>
+        <button (click)="aceptarSolicitud(solicitud)" class="btn-aceptar">Aceptar</button>
+        <button (click)="rechazarSolicitud(solicitud)" class="btn-rechazar">Rechazar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

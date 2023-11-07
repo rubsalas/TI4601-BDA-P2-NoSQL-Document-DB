@@ -1,0 +1,67 @@
+<div class="page-content page-container" id="page-content">
+  <div class="padding">
+      <div class="row container d-flex justify-content-center">
+          <div class="col-lg-16 grid-margin stretch-card">
+            <div class="card">
+              <div class="card-body">
+                <h3 class="card-title">VALORACION DE SOLICITUDES</h3>
+                <button (click)="refreshList()" class="btn btn-success" style="margin-bottom: 5px;">Recargar Lista</button>
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Puesto</th>
+                        <th>Departamento</th>
+                        <th>Viaje</th>
+                        <th>Periodo</th>
+                        <th>Detalles</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let solicitud of soli" class="table-row">
+                        <td>{{ solicitud.id }}</td>
+                        <td>{{ solicitud.nombre }}</td>
+                        <td>{{ solicitud.puesto }}</td>
+                        <td>{{ solicitud.depa }}</td>
+                        <td>
+                          <tr><label class="accent">Tipo:</label> {{ solicitud.tipo }}</tr>
+                          <br>
+                          <tr><label class="accent">Destino:</label> {{ solicitud.destino }}</tr>
+                          <br>
+                          <tr><label class="accent">Motivo:</label> {{ solicitud.motivo }}</tr>
+                        </td>
+                        
+                        <td>
+                          <tr><label class="accent">Inicio:</label> {{ solicitud.inicio }}</tr>
+                          <br>
+                          <tr><label class="accent">Fin:</label> {{ solicitud.final }}</tr>
+                        </td>
+                        <td>
+                          <tr><label class="accent">Aerolínea:</label> {{solicitud.aerolinea}}</tr>
+                          <br>
+                          <tr><label class="accent">Alojamiento:</label> {{solicitud.alojamiento}}</tr>
+                          <br>
+                          <tr><label class="accent">Boletos:</label>${{solicitud.precio}}</tr>
+                          <br>
+                          <tr><label class="accent">Transporte:</label> {{solicitud.transporte}}</tr>
+                        </td>   
+                        <td>{{ solicitud.estado }}</td>
+                        <td>
+                          <button (click)="aceptarSolicitud(solicitud)" class="btn btn-primary" style="margin-right: 5px; margin-bottom: 5px; padding-right: 15px; padding-left: 15px;">Aceptar</button>
+                          <button (click)="rechazarSolicitud(solicitud)" class="btn btn-danger" style="margin-bottom: 5px;">Rechazar</button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+      </div>
+  </div>
+</div>

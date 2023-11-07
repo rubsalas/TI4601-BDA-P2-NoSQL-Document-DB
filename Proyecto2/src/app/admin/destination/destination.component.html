@@ -1,0 +1,55 @@
+<form class="formulary" [formGroup]="destForm" (ngSubmit)="mostrarDiv(destForm.value)">
+  
+  <div class="segment">
+      <h1>Consulta de viajes por destino</h1>
+  </div>
+  <br>
+  <label>
+      <h5>Seleccione el destino:</h5>
+      <select class="rounded-pill" aria-label="Default select example" formControlName="destino">
+        <option *ngFor="let sol of filtradas" [value]="sol">
+          {{sol}}
+        </option>
+      </select>
+  </label>
+  <button class="rounded-pill" style="margin-left: 260px;">Consultar</button>
+
+</form>
+
+
+<br><br><br><br>
+
+<div *ngIf="isClosed">
+  <!-- poner la tabla aqui-->
+  <div class="page-content page-container" id="page-content">
+    <div class="padding">
+        <div class="row container d-flex justify-content-center">
+            <div class="col-lg-16 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h3 class="card-title">Colaboradores con viaje programado para este mes y año</h3>
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th>Nombre del colaborador</th>
+                          <th>Fecha de Inicio</th>
+                          <th>Motivo del viaje</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let solicitud of selected" class="table-row">
+                          <td>{{ solicitud.nombre }}</td>
+                          <td>{{ solicitud.inicio }}</td>
+                          <td>{{ solicitud.motivo}}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div> 
+        </div>
+    </div>
+</div>
+</div>
