@@ -1,5 +1,4 @@
 ﻿using bda_p2_api.Models;
-using Microsoft.Extensions.Options;
 using MongoDB.Driver;
 using MongoDB.Bson;
 
@@ -10,7 +9,7 @@ namespace bda_p2_api.Services
         private readonly IMongoCollection<Administrator> _administratorsCollection;
         private readonly IMongoCollection<Collaborator> _collaboratorsCollection;
 
-        public MongoDBService1(IOptions<MongoDBSettings> mongoDBSettings)
+        public MongoDBService1()
         {
             MongoClient client = new MongoClient("mongodb+srv://cbdap2-1:cbdap2-1@clusterbdap2-1.qxq3tsq.mongodb.net/?retryWrites=true&w=majority");
             IMongoDatabase database = client.GetDatabase("bdap2-1");
@@ -18,9 +17,14 @@ namespace bda_p2_api.Services
             _collaboratorsCollection = database.GetCollection<Collaborator>("Colaboradores");
         }
 
+
         /* **************************************************** Administradores **************************************************** */
 
 
+        /// <summary>
+        /// Obtiene todos los Administradores.
+        /// </summary>
+        /// <returns>Lista de modelos de todos los Administradores.</returns>
         public async Task<List<Administrator>> GetAllAdministrators()
         {
             return await _administratorsCollection.Find(new BsonDocument()).ToListAsync();
@@ -67,7 +71,10 @@ namespace bda_p2_api.Services
         /* ***************************************************** Colaboradores ***************************************************** */
 
 
-
+        /// <summary>
+        /// Obtiene todos los Colaboradores.
+        /// </summary>
+        /// <returns>Lista de modelos de todos los Colaboradores.</returns>
         public async Task<List<Collaborator>> GetAllCollaborators()
         {
             return await _collaboratorsCollection.Find(new BsonDocument()).ToListAsync();
@@ -99,6 +106,11 @@ namespace bda_p2_api.Services
             return;
         }
 
+        /// <summary>
+        /// Elimina un Colaborador.
+        /// </summary>
+        /// <param name="id">Id del Colaborador por eliminar.</param>
+        /// <returns></returns>
         public async Task DeleteCollaborator(string id)
         {
             FilterDefinition<Collaborator> filter = Builders<Collaborator>.Filter.Eq("id", id);
@@ -109,6 +121,48 @@ namespace bda_p2_api.Services
 
         /* ****************************************************** Solicitudes ****************************************************** */
 
+
+        /// <summary>
+        /// Obtiene todas las solicitudes con el respectivo id del Colaborador.
+        /// </summary>
+        /// <returns>Lista de Solicitudes con el id del Colaborador.</returns>
+        public async Task<List<CollaboratorsRequest>> GetAllCollaboratorsRequests()
+        {
+            List<CollaboratorsRequest> result = new List<CollaboratorsRequest>();
+            List<Collaborator> collaborators = await GetAllCollaborators();
+
+            foreach (var collaborator in collaborators)
+            {
+                // Verifica si el Collaborator tiene solicitudes antes de procesarlas
+                if (collaborator.solicitudes != null && collaborator.solicitudes.Any())
+                {
+                    foreach (var request in collaborator.solicitudes)
+                    {
+                        CollaboratorsRequest collaboratorRequest = new CollaboratorsRequest
+                        {
+                            cid = collaborator.id,
+                            nombre = collaborator.nombre,
+                            puesto = collaborator.puesto,
+                            depa = collaborator.depa,
+                            id = request.id,
+                            tipo = request.tipo,
+                            destino = request.destino,
+                            motivo = request.motivo,
+                            inicio = request.inicio,
+                            final = request.final,
+                            aerolinea = request.aerolinea,
+                            precio = request.precio,
+                            alojamiento = request.alojamiento,
+                            transporte = request.transporte,
+                            estado = request.estado                            
+                        };
+                        result.Add(collaboratorRequest);
+                    }
+                }
+            }
+
+            return result;
+        }
 
         // 3.
         /// <summary>

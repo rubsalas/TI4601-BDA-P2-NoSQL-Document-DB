@@ -20,6 +20,10 @@ namespace bda_p2_api.Controllers
             _administratorService3 = administratorService3;
         }
 
+        /// <summary>
+        /// Request que obtiene todos los Administradores.
+        /// </summary>
+        /// <returns>Lista de modelos de todos los Administradores.</returns>
         [HttpGet]
         public async Task<List<Administrator>> GetAllAdministrators()
         {
@@ -43,7 +47,7 @@ namespace bda_p2_api.Controllers
         /// <summary>
         /// Request para agregar un Administrador en la base de datos.
         /// </summary>
-        /// <param name="id">Modelo del Administrador por agregar.</param>
+        /// <param name="administrator">Modelo del Administrador por agregar.</param>
         /// <returns></returns>
         [HttpPost]
         public async Task<IActionResult> RegisterAdministrators(Administrator administrator)
@@ -58,6 +62,11 @@ namespace bda_p2_api.Controllers
             return CreatedAtAction(nameof(GetAllAdministrators), new { id = administrator.id }, administrator );
         }
 
+        /// <summary>
+        /// Request que elimina un Administrador de la base de datos.
+        /// </summary>
+        /// <param name="id">Id del Administrador por eliminar.</param>
+        /// <returns></returns>
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAdministrator(string id)
         {
@@ -71,8 +80,22 @@ namespace bda_p2_api.Controllers
             return Ok();
         }
 
+
         /* ****************************************************** Solicitudes ****************************************************** */
 
+
+        /// <summary>
+        /// Request para obtener todas las solicitudes con el respectivo id del Colaborador.
+        /// </summary>
+        /// <returns>Lista de Solicitudes con el id del Colaborador.</returns>
+        [HttpGet("Request")]
+        public async Task<ActionResult<List<CollaboratorsRequest>>> GetAllCollaboratorsRequests()
+        {
+            var result = await _administratorService1.GetAllCollaboratorsRequests();
+            if (result is null)
+                return NotFound(string.Format("There are no requests."));
+            return Ok(result);
+        }
 
         /// <summary>
         /// Request para obtener todas las solicitudes que tienen "Pendiente" como estado.

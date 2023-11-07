@@ -20,6 +20,10 @@ namespace bda_p2_api.Controllers
             _collaboratorService3 = collaboratorService3;
         }
 
+        /// <summary>
+        /// Request que obtiene todos los Colaboradores.
+        /// </summary>
+        /// <returns>Lista de modelos de todos los Colaboradores.</returns>
         [HttpGet]
         public async Task<List<Collaborator>> GetAllCollaborators()
         {
@@ -43,11 +47,12 @@ namespace bda_p2_api.Controllers
         /// <summary>
         /// Request para agregar un Colaborador en la base de datos.
         /// </summary>
-        /// <param name="id">Modelo del Colaborador por agregar.</param>
+        /// <param name="collaborator">Modelo del Colaborador por agregar.</param>
         /// <returns></returns>
         [HttpPost]
         public async Task<IActionResult> RegisterCollaborator(Collaborator collaborator)
         {
+            collaborator.solicitudes = new List<Request>();
             // BDAP2-1
             await _collaboratorService1.RegisterCollaborator(collaborator);
             // BDAP2-2
@@ -57,7 +62,11 @@ namespace bda_p2_api.Controllers
             return CreatedAtAction(nameof(GetAllCollaborators), new { id = collaborator.id }, collaborator);
         }
 
-
+        /// <summary>
+        /// Request que elimina un Colaborador de la base de datos.
+        /// </summary>
+        /// <param name="id">Id del Colaborador por eliminar.</param>
+        /// <returns></returns>
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCollaborator(string id)
         {   
@@ -71,7 +80,9 @@ namespace bda_p2_api.Controllers
             return NoContent();
         }
 
+
         /* ****************************************************** Solicitudes ****************************************************** */
+
 
         /// <summary>
         /// Request que obtiene las Solicitudes de un Colaborador especifico de la base de datos.

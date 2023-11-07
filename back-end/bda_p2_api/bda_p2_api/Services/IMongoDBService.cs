@@ -1,11 +1,9 @@
 ﻿using bda_p2_api.Models;
-using System.ComponentModel.DataAnnotations;
 
 namespace bda_p2_api.Services
 {
     public interface IMongoDBService
     {
-
         /* **************************************************** Administradores **************************************************** */
 
         Task<List<Administrator>> GetAllAdministrators(); // NN
@@ -36,6 +34,8 @@ namespace bda_p2_api.Services
 
         /* ****************************************************** Solicitudes ****************************************************** */
 
+        Task<List<CollaboratorsRequest>> GetAllCollaboratorsRequests();
+
         Task<List<Request>> GetPendingRequests(); // 3.
 
         Task<List<Request>> GetCollaboratorsRequests(string id); // 11.
@@ -49,6 +49,5 @@ namespace bda_p2_api.Services
         Task<Collaborator> UpdateRequest(string cid, string rid, Request request); // 12.
 
         Task<Collaborator> DeleteRequest(string cid, string rid); // 13.
-
     }
 }
