@@ -1,0 +1,30 @@
+[{
+  "_id": {
+    "$oid": "6546b5092691be6dbb47593f"
+  },
+  "nombre": "Valerin Calderon Bran",
+  "correo": "vcalderon@estudiantec.cr",
+  "contra": "1234",
+  "puesto": "Administrador",
+  "depa": "Diseño"
+},
+{
+  "_id": {
+    "$oid": "65475cea2691be6dbb47594f"
+  },
+  "nombre": "Mario Carranza Castillo",
+  "correo": "mcarranza@estudiantec.cr",
+  "contra": "2345",
+  "puesto": "Administrador",
+  "depa": "Produccion"
+},
+{
+  "_id": {
+    "$oid": "65475d072691be6dbb475951"
+  },
+  "nombre": "Ruben Salas Ramirez",
+  "correo": "rubsalas@estudiantec.cr",
+  "contra": "7890",
+  "puesto": "Administrador",
+  "depa": "Compras"
+}]

@@ -1,0 +1,1269 @@
+[{
+  "_id": {
+    "$oid": "6548b7ef2691be6dbb47598f"
+  },
+  "nombre": "Glynnis Arnaudin",
+  "correo": "garnaudin0@4shared.com",
+  "contra": "X2GSDC",
+  "puesto": "Gerente",
+  "depa": "Tecnología",
+  "solicitudes": [
+    {
+      "_id": "27tuE186pQ0tGhi26ITzT1713e9x19lqi7Q5P6zG1RC2MrT8J",
+      "tipo": "Internacional",
+      "destino": "China",
+      "motivo": "Seguimiento",
+      "inicio": "13/01/2023",
+      "final": "12/02/2023",
+      "aerolinea": "Emirates",
+      "precio": 3688,
+      "alojamiento": "Casa de huéspedes",
+      "transporte": "A pie",
+      "estado": "Aprobada"
+    },
+    {
+      "_id": "Q5QlNQJP79VQ24EsLsFNmqQ8V897mC44835XG43P5U4dvdsQf",
+      "tipo": "Internacional",
+      "destino": "Philippines",
+      "motivo": "Seguimiento",
+      "inicio": "06/05/2023",
+      "final": "27/05/2023",
+      "aerolinea": "Singapore Airlines",
+      "precio": 3668,
+      "alojamiento": "Casa de huéspedes",
+      "transporte": "A pie",
+      "estado": "Aprobada"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6548b7ef2691be6dbb475990"
+  },
+  "nombre": "Jessee Joutapavicius",
+  "correo": "jjoutapavicius1@adobe.com",
+  "contra": "lUp25y",
+  "puesto": "Ingeniero",
+  "depa": "Logística",
+  "solicitudes": [
+    {
+      "_id": "0Yq39vA50vFL9Cwb5Hv0O0lu0IXNtm00PLKhMkh6qYTe8Duoq",
+      "tipo": "Internacional",
+      "destino": "Indonesia",
+      "motivo": "Capacitacion",
+      "inicio": "12/03/2023",
+      "final": "06/04/2023",
+      "aerolinea": "Delta",
+      "precio": 1345,
+      "alojamiento": "Hotel",
+      "transporte": "Moto",
+      "estado": "Rechazada"
+    },
+    {
+      "_id": "VT1y35lXCtJV83gIMcN00U77Gun6ZnaGS3w9O4pTeUk3Vyb28",
+      "tipo": "Internacional",
+      "destino": "Brazil",
+      "motivo": "Seguimiento",
+      "inicio": "10/05/2023",
+      "final": "22/05/2023",
+      "aerolinea": "American",
+      "precio": 1304,
+      "alojamiento": "Casa de huéspedes",
+      "transporte": "Moto",
+      "estado": "Rechazada"
+    },
+    {
+      "_id": "15H7Amh81Ru7h88d48A672lB9Mw3jWs9dvaST9t1QA2Hi7JHY",
+      "tipo": "Nacional",
+      "destino": "Ireland",
+      "motivo": "Cierre venta",
+      "inicio": "17/10/2023",
+      "final": "17/11/2023",
+      "aerolinea": "Southwest",
+      "precio": 1665,
+      "alojamiento": "Apartamento",
+      "transporte": "Moto",
+      "estado": "Pendiente"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6548b7ef2691be6dbb475991"
+  },
+  "nombre": "Alaster Birmingham",
+  "correo": "abirmingham2@ehow.com",
+  "contra": "FgONVa",
+  "puesto": "Gerente",
+  "depa": "Ventas",
+  "solicitudes": [
+    {
+      "_id": "qU9HP4tzjoxXC85o0GWW81lhY4TI3tbxgISmNVbZupFaik2hb",
+      "tipo": "Internacional",
+      "destino": "Poland",
+      "motivo": "Cierre venta",
+      "inicio": "04/07/2023",
+      "final": "28/07/2023",
+      "aerolinea": "British Airways",
+      "precio": 1566,
+      "alojamiento": "Albergue",
+      "transporte": "A pie",
+      "estado": "Aprobada"
+    },
+    {
+      "_id": "cxBt3HS7dp8Guotf7dQ4jRI47D2n0b2f7dQ3YcC4Oi2JT07Do",
+      "tipo": "Nacional",
+      "destino": "Philippines",
+      "motivo": "Capacitacion",
+      "inicio": "19/06/2023",
+      "final": "02/08/2023",
+      "aerolinea": "Air France",
+      "precio": 2052,
+      "alojamiento": "Apartamento",
+      "transporte": "Tren",
+      "estado": "Aprobada"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6548b7ef2691be6dbb475992"
+  },
+  "nombre": "Link Blanckley",
+  "correo": "lblanckley3@booking.com",
+  "contra": "FJFU96",
+  "puesto": "Ingeniero",
+  "depa": "Finanzas",
+  "solicitudes": [
+    {
+      "_id": "QP6499sY10pBYo8nCzYvy43Sr03u4lCHVknug0be3REWoGXK2",
+      "tipo": "Nacional",
+      "destino": "Laos",
+      "motivo": "Capacitacion",
+      "inicio": "08/01/2023",
+      "final": "14/02/2023",
+      "aerolinea": "Air France",
+      "precio": 2753,
+      "alojamiento": "Hostal",
+      "transporte": "Carro",
+      "estado": "Pendiente"
+    },
+    {
+      "_id": "6Yi1SiYnXcF284PDgOR4WSJ19amu1NUOweF21rD5seeknXjIQ",
+      "tipo": "Internacional",
+      "destino": "Philippines",
+      "motivo": "Cierre venta",
+      "inicio": "24/03/2023",
+      "final": "20/04/2023",
+      "aerolinea": "Southwest",
+      "precio": 2874,
+      "alojamiento": "Hostal",
+      "transporte": "A pie",
+      "estado": "Rechazada"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6548b7ef2691be6dbb475993"
+  },
+  "nombre": "Mohammed Tremathack",
+  "correo": "mtremathack4@bloglovin.com",
+  "contra": "W5j57c",
+  "puesto": "Ingeniero",
+  "depa": "Compras",
+  "solicitudes": [
+    {
+      "_id": "Sla16N0C6A3KPuRs1m97Tp313ZmdiKCssaAGSFQQw1fC3O1WL",
+      "tipo": "Internacional",
+      "destino": "Poland",
+      "motivo": "Seguimiento",
+      "inicio": "01/05/2023",
+      "final": "09/06/2023",
+      "aerolinea": "United",
+      "precio": 995,
+      "alojamiento": "Hostal",
+      "transporte": "A pie",
+      "estado": "Aprobada"
+    },
+    {
+      "_id": "63e7BgYX0I26iD46yW9MauWIXf4prFJnzY836eQTR7NKd1dnz",
+      "tipo": "Internacional",
+      "destino": "Honduras",
+      "motivo": "Capacitacion",
+      "inicio": "09/07/2023",
+      "final": "16/07/2023",
+      "aerolinea": "Emirates",
+      "precio": 4536,
+      "alojamiento": "Apartamento",
+      "transporte": "Taxi",
+      "estado": "Aprobada"
+    },
+    {
+      "_id": "1es2yAkw0h0cO9Kt7cP97EeY3cinK97W94jBgnr15wgKNx83c",
+      "tipo": "Internacional",
+      "destino": "Indonesia",
+      "motivo": "Capacitacion",
+      "inicio": "23/06/2023",
+      "final": "27/07/2023",
+      "aerolinea": "Air France",
+      "precio": 957,
+      "alojamiento": "Casa de huéspedes",
+      "transporte": "Bus",
+      "estado": "Pendiente"
+    },
+    {
+      "_id": "U3L24xY36yp580zDe9C0Y35ZgvtPDhL712a6U5q64a83Ts0I5",
+      "tipo": "Nacional",
+      "destino": "China",
+      "motivo": "Cierre venta",
+      "inicio": "14/10/2023",
+      "final": "09/11/2023",
+      "aerolinea": "Delta",
+      "precio": 4912,
+      "alojamiento": "Airbnb",
+      "transporte": "Moto",
+      "estado": "Rechazada"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6548b7ef2691be6dbb475994"
+  },
+  "nombre": "Leta Hars",
+  "correo": "lhars5@apple.com",
+  "contra": "8H05W9",
+  "puesto": "Gerente",
+  "depa": "Finanzas",
+  "solicitudes": [
+    {
+      "_id": "Fwt5pxHsGQ20Bpa99868J1X1W8J9wCW40LXq10gZ08197p9Gq",
+      "tipo": "Internacional",
+      "destino": "China",
+      "motivo": "Cierre venta",
+      "inicio": "26/04/2023",
+      "final": "01/06/2023",
+      "aerolinea": "American",
+      "precio": 1292,
+      "alojamiento": "Airbnb",
+      "transporte": "Tren",
+      "estado": "Pendiente"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6548b7ef2691be6dbb475995"
+  },
+  "nombre": "Quinn Gunnell",
+  "correo": "qgunnell6@quantcast.com",
+  "contra": "Z1JXku",
+  "puesto": "Gerente",
+  "depa": "Logística",
+  "solicitudes": [
+    {
+      "_id": "F3FaK62KHl7X2Q5JwW9BtS5phYXa8lh0DCZ03vJ1VVv3CYco9",
+      "tipo": "Internacional",
+      "destino": "Thailand",
+      "motivo": "Cierre venta",
+      "inicio": "13/03/2023",
+      "final": "09/04/2023",
+      "aerolinea": "Delta",
+      "precio": 2272,
+      "alojamiento": "Apartamento",
+      "transporte": "Taxi",
+      "estado": "Pendiente"
+    },
+    {
+      "_id": "Ag8M8FVyXZOP28dL0ic8V036k4JIyU6ZXfGrAe9a764E8pKld",
+      "tipo": "Internacional",
+      "destino": "Egypt",
+      "motivo": "Seguimiento",
+      "inicio": "06/12/2023",
+      "final": "15/12/2023",
+      "aerolinea": "Emirates",
+      "precio": 3134,
+      "alojamiento": "Casa de huéspedes",
+      "transporte": "Carro",
+      "estado": "Pendiente"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6548b7ef2691be6dbb475996"
+  },
+  "nombre": "Jorie Battey",
+  "correo": "jbattey7@etsy.com",
+  "contra": "451VSZ",
+  "puesto": "Asistente",
+  "depa": "Recursos Humanos",
+  "solicitudes": [
+    {
+      "_id": "LJpo0O17n3z4d78b4N0U3RnVS8F54t5709Cea27wi58CmmJvt",
+      "tipo": "Internacional",
+      "destino": "Central African Republic",
+      "motivo": "Seguimiento",
+      "inicio": "16/03/2023",
+      "final": "14/04/2023",
+      "aerolinea": "Southwest",
+      "precio": 3550,
+      "alojamiento": "Apartamento",
+      "transporte": "Buseta",
+      "estado": "Pendiente"
+    },
+    {
+      "_id": "YR7Z1UOrs8ep9bZJMYrm3vSL309F98GEk94ia3m9n731Bzm9x",
+      "tipo": "Nacional",
+      "destino": "China",
+      "motivo": "Seguimiento",
+      "inicio": "14/08/2023",
+      "final": "28/09/2023",
+      "aerolinea": "Air France",
+      "precio": 2201,
+      "alojamiento": "Apartamento",
+      "transporte": "Bus",
+      "estado": "Pendiente"
+    },
+    {
+      "_id": "O8dyzZErRb1LGbP9Hxh25FQbH7xvuQoV0wyt5VNJ4183Fa5Py",
+      "tipo": "Internacional",
+      "destino": "Brazil",
+      "motivo": "Capacitacion",
+      "inicio": "30/08/2023",
+      "final": "05/10/2023",
+      "aerolinea": "Delta",
+      "precio": 3350,
+      "alojamiento": "Casa de huéspedes",
+      "transporte": "Carro",
+      "estado": "Pendiente"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6548b7ef2691be6dbb475997"
+  },
+  "nombre": "Tobi Bugby",
+  "correo": "tbugby8@dell.com",
+  "contra": "vYY177",
+  "puesto": "Asistente",
+  "depa": "Compras",
+  "solicitudes": [
+    {
+      "_id": "EW4RDvbJ547j939F4eruOS8iQ7pXn3tp2AS24TjG3Yb05GUZR",
+      "tipo": "Nacional",
+      "destino": "Yemen",
+      "motivo": "Capacitacion",
+      "inicio": "12/01/2023",
+      "final": "07/02/2023",
+      "aerolinea": "Qatar Airways",
+      "precio": 2423,
+      "alojamiento": "Hostal",
+      "transporte": "Buseta",
+      "estado": "Rechazada"
+    },
+    {
+      "_id": "DW6MCk8A5Z47yqZHuQaD8Xe8R3tw9hom8pz553iuC220XaNs1",
+      "tipo": "Internacional",
+      "destino": "Indonesia",
+      "motivo": "Cierre venta",
+      "inicio": "30/10/2023",
+      "final": "12/11/2023",
+      "aerolinea": "Singapore Airlines",
+      "precio": 3944,
+      "alojamiento": "Camping",
+      "transporte": "Moto",
+      "estado": "Rechazada"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6548b7ef2691be6dbb475998"
+  },
+  "nombre": "Gwenneth Agent",
+  "correo": "gagent9@twitter.com",
+  "contra": "Cb1y2z",
+  "puesto": "Ingeniero",
+  "depa": "Calidad",
+  "solicitudes": [
+    {
+      "_id": "V3by76QrfC2jmL0j3yj693TSBh79fG6nnuak5F770t03t2x4Y",
+      "tipo": "Nacional",
+      "destino": "France",
+      "motivo": "Seguimiento",
+      "inicio": "12/03/2023",
+      "final": "04/04/2023",
+      "aerolinea": "Air France",
+      "precio": 3608,
+      "alojamiento": "Albergue",
+      "transporte": "Buseta",
+      "estado": "Rechazada"
+    },
+    {
+      "_id": "1H01v03GLJ9l94t8fHz2Ns26J5iImxhcQND7m0l5L3LVq5032",
+      "tipo": "Internacional",
+      "destino": "Colombia",
+      "motivo": "Cierre venta",
+      "inicio": "08/09/2023",
+      "final": "19/09/2023",
+      "aerolinea": "British Airways",
+      "precio": 2262,
+      "alojamiento": "Hotel",
+      "transporte": "Bus",
+      "estado": "Pendiente"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6548b7ef2691be6dbb475999"
+  },
+  "nombre": "Aeriell Spiby",
+  "correo": "aspibya@ca.gov",
+  "contra": "A1DJ9s",
+  "puesto": "Recepcionista",
+  "depa": "Finanzas",
+  "solicitudes": [
+    {
+      "_id": "3HHyKq7YR7Z3saCJoGSvZH5n5UYQhY86rs1EhY5I7Rc7pRtJ6",
+      "tipo": "Nacional",
+      "destino": "Ukraine",
+      "motivo": "Capacitacion",
+      "inicio": "19/05/2023",
+      "final": "01/06/2023",
+      "aerolinea": "United",
+      "precio": 821,
+      "alojamiento": "Apartamento",
+      "transporte": "Moto",
+      "estado": "Pendiente"
+    },
+    {
+      "_id": "28eJAz8N2MnP65KsQ7J33676YO92WNUfOQ116C0SYjF7z7ZAA",
+      "tipo": "Internacional",
+      "destino": "Kazakhstan",
+      "motivo": "Seguimiento",
+      "inicio": "01/11/2023",
+      "final": "11/11/2023",
+      "aerolinea": "Air France",
+      "precio": 4444,
+      "alojamiento": "Hotel",
+      "transporte": "Tren",
+      "estado": "Rechazada"
+    },
+    {
+      "_id": "A3klkC60lAhcJGck2zf369p0F1LnTosgdS7t0qv7eAJCbcHkY",
+      "tipo": "Nacional",
+      "destino": "Colombia",
+      "motivo": "Seguimiento",
+      "inicio": "22/10/2023",
+      "final": "17/11/2023",
+      "aerolinea": "Delta",
+      "precio": 595,
+      "alojamiento": "Hostal",
+      "transporte": "A pie",
+      "estado": "Aprobada"
+    },
+    {
+      "_id": "f8uGsWiv3013J06xdNh5cw2QWxgVw6k81qv4Z2m5U908NAsxi",
+      "tipo": "Internacional",
+      "destino": "Poland",
+      "motivo": "Seguimiento",
+      "inicio": "02/12/2023",
+      "final": "27/12/2023",
+      "aerolinea": "Southwest",
+      "precio": 3540,
+      "alojamiento": "Casa de huéspedes",
+      "transporte": "Bus",
+      "estado": "Aprobada"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6548b7ef2691be6dbb47599a"
+  },
+  "nombre": "Lawry Broadbear",
+  "correo": "lbroadbearb@tumblr.com",
+  "contra": "0ValQ5",
+  "puesto": "Programador",
+  "depa": "Compras",
+  "solicitudes": [
+    {
+      "_id": "Pr08XGWV97U3pL4l6wh0JDv151tikLX29Tf19ySFkZ9n9lJV2",
+      "tipo": "Internacional",
+      "destino": "Canada",
+      "motivo": "Cierre venta",
+      "inicio": "24/01/2023",
+      "final": "04/02/2023",
+      "aerolinea": "British Airways",
+      "precio": 3555,
+      "alojamiento": "Camping",
+      "transporte": "Taxi",
+      "estado": "Aprobada"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6548b7ef2691be6dbb47599b"
+  },
+  "nombre": "Tim Newland",
+  "correo": "tnewlandc@apple.com",
+  "contra": "wrZ68m",
+  "puesto": "Gerente",
+  "depa": "Tecnología",
+  "solicitudes": [
+    {
+      "_id": "dPD78RMbSt8vcag5AD6dX15hv5tG0w91rpUPzVMzlHLokUG0s",
+      "tipo": "Internacional",
+      "destino": "Colombia",
+      "motivo": "Cierre venta",
+      "inicio": "19/01/2023",
+      "final": "23/02/2023",
+      "aerolinea": "United",
+      "precio": 828,
+      "alojamiento": "Apartamento",
+      "transporte": "Carro",
+      "estado": "Aprobada"
+    },
+    {
+      "_id": "4Xpi036aE7WsEkq4Im0G702n7yxw62Kdy7Y5Bh1T3kH421PmV",
+      "tipo": "Internacional",
+      "destino": "United States",
+      "motivo": "Cierre venta",
+      "inicio": "15/08/2023",
+      "final": "24/09/2023",
+      "aerolinea": "Emirates",
+      "precio": 4198,
+      "alojamiento": "Airbnb",
+      "transporte": "Tren",
+      "estado": "Pendiente"
+    },
+    {
+      "_id": "Rbfo1T0QL2uU2G3n6774qB1Mw568Q4hNX4HTLRJ9dZa836lSZ",
+      "tipo": "Nacional",
+      "destino": "Indonesia",
+      "motivo": "Cierre venta",
+      "inicio": "26/11/2023",
+      "final": "23/12/2023",
+      "aerolinea": "Emirates",
+      "precio": 2150,
+      "alojamiento": "Airbnb",
+      "transporte": "Bus",
+      "estado": "Pendiente"
+    },
+    {
+      "_id": "vC1HSIN8VdH11RF8KjtrJygb4b0GQ1bme9TQqa2Uw1f9x8W5f",
+      "tipo": "Nacional",
+      "destino": "Indonesia",
+      "motivo": "Seguimiento",
+      "inicio": "03/12/2023",
+      "final": "15/12/2023",
+      "aerolinea": "Air France",
+      "precio": 3922,
+      "alojamiento": "Hotel",
+      "transporte": "Bus",
+      "estado": "Pendiente"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6548b7ef2691be6dbb47599c"
+  },
+  "nombre": "Sher Licence",
+  "correo": "slicenced@deliciousdays.com",
+  "contra": "Zv546v",
+  "puesto": "Gerente",
+  "depa": "Ventas",
+  "solicitudes": [
+    {
+      "_id": "6i144TY1ls49g335QIME780a7wdJxUU1eY0i216d0axUIfi2s",
+      "tipo": "Internacional",
+      "destino": "Indonesia",
+      "motivo": "Cierre venta",
+      "inicio": "21/03/2023",
+      "final": "28/03/2023",
+      "aerolinea": "Air France",
+      "precio": 785,
+      "alojamiento": "Casa de huéspedes",
+      "transporte": "Tren",
+      "estado": "Rechazada"
+    },
+    {
+      "_id": "a92787N3GDbNh5uPSv7JGXeHn9sZi1FgPZ0boT0B8mr96Z38P",
+      "tipo": "Nacional",
+      "destino": "France",
+      "motivo": "Capacitacion",
+      "inicio": "06/12/2023",
+      "final": "17/12/2023",
+      "aerolinea": "American",
+      "precio": 1956,
+      "alojamiento": "Hostal",
+      "transporte": "A pie",
+      "estado": "Aprobada"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6548b7ef2691be6dbb47599d"
+  },
+  "nombre": "Carolan Gornal",
+  "correo": "cgornale@va.gov",
+  "contra": "p3U7tC",
+  "puesto": "Programador",
+  "depa": "Operaciones",
+  "solicitudes": [
+    {
+      "_id": "M6b8ars0702915R4VShbQ1ZDWatt09htSL3cf4GvBlivPWDQG",
+      "tipo": "Nacional",
+      "destino": "China",
+      "motivo": "Cierre venta",
+      "inicio": "27/08/2023",
+      "final": "11/09/2023",
+      "aerolinea": "Qatar Airways",
+      "precio": 2204,
+      "alojamiento": "Casa de huéspedes",
+      "transporte": "Moto",
+      "estado": "Aprobada"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6548b7ef2691be6dbb47599e"
+  },
+  "nombre": "Cross Deem",
+  "correo": "cdeemf@google.com",
+  "contra": "O8F13n",
+  "puesto": "Ingeniero",
+  "depa": "Recursos Humanos",
+  "solicitudes": [
+    {
+      "_id": "ywjPl9Jr696073o2B8l8HTVn21PqS2cViY85P0K42X8eEibb8",
+      "tipo": "Internacional",
+      "destino": "Democratic Republic of the Congo",
+      "motivo": "Cierre venta",
+      "inicio": "23/01/2023",
+      "final": "19/02/2023",
+      "aerolinea": "Lufthansa",
+      "precio": 1611,
+      "alojamiento": "Airbnb",
+      "transporte": "Bus",
+      "estado": "Aprobada"
+    },
+    {
+      "_id": "bzuRYY22wM3G7Rm3cmYA0fExun1ht9151oqr6N5jbQM8h78kz",
+      "tipo": "Internacional",
+      "destino": "United States",
+      "motivo": "Cierre venta",
+      "inicio": "04/05/2023",
+      "final": "10/06/2023",
+      "aerolinea": "Delta",
+      "precio": 3501,
+      "alojamiento": "Hotel",
+      "transporte": "Buseta",
+      "estado": "Aprobada"
+    },
+    {
+      "_id": "6ulDO5d2wNgV0762051951dxGDdM9IpZA7ZSf7IP2Lj39sPUz",
+      "tipo": "Internacional",
+      "destino": "Bosnia and Herzegovina",
+      "motivo": "Seguimiento",
+      "inicio": "06/05/2023",
+      "final": "23/05/2023",
+      "aerolinea": "United",
+      "precio": 4011,
+      "alojamiento": "Hostal",
+      "transporte": "Bus",
+      "estado": "Pendiente"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6548b7ef2691be6dbb47599f"
+  },
+  "nombre": "Merell Deme",
+  "correo": "mdemeg@barnesandnoble.com",
+  "contra": "CPNW1J",
+  "puesto": "Programador",
+  "depa": "Tecnología",
+  "solicitudes": [
+    {
+      "_id": "x7rpt13tpyw1cvPsOQi3fL7NM21MLHb65ifVhT7PA4aqoZZwI",
+      "tipo": "Nacional",
+      "destino": "Nicaragua",
+      "motivo": "Capacitacion",
+      "inicio": "28/02/2023",
+      "final": "18/04/2023",
+      "aerolinea": "United",
+      "precio": 3274,
+      "alojamiento": "Hostal",
+      "transporte": "Taxi",
+      "estado": "Aprobada"
+    },
+    {
+      "_id": "p60A93Ydz15IyO471Z82MY3q31KJ9S638JIkMsaurm59fuUop",
+      "tipo": "Internacional",
+      "destino": "Uganda",
+      "motivo": "Cierre venta",
+      "inicio": "30/06/2023",
+      "final": "21/07/2023",
+      "aerolinea": "Lufthansa",
+      "precio": 753,
+      "alojamiento": "Casa de huéspedes",
+      "transporte": "Carro",
+      "estado": "Rechazada"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6548b7ef2691be6dbb4759a0"
+  },
+  "nombre": "Freddie Nortunen",
+  "correo": "fnortunenh@cbslocal.com",
+  "contra": "PT800R",
+  "puesto": "Gerente",
+  "depa": "Finanzas",
+  "solicitudes": [
+    {
+      "_id": "G3Ll6mv3Lf3ds5YuR9V1FV95d9oN458DJim72HB6pLhh4m8sQ",
+      "tipo": "Nacional",
+      "destino": "Indonesia",
+      "motivo": "Seguimiento",
+      "inicio": "02/11/2023",
+      "final": "12/11/2023",
+      "aerolinea": "British Airways",
+      "precio": 1094,
+      "alojamiento": "Apartamento",
+      "transporte": "Bus",
+      "estado": "Pendiente"
+    },
+    {
+      "_id": "KW84x6x83X0qTXlpf753277D1CuqqhD772f1gp9a7t6F44wr9",
+      "tipo": "Nacional",
+      "destino": "Indonesia",
+      "motivo": "Capacitacion",
+      "inicio": "23/10/2023",
+      "final": "09/11/2023",
+      "aerolinea": "Singapore Airlines",
+      "precio": 4571,
+      "alojamiento": "Hostal",
+      "transporte": "Bus",
+      "estado": "Rechazada"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6548b7ef2691be6dbb4759a1"
+  },
+  "nombre": "Neale Romagosa",
+  "correo": "nromagosai@weibo.com",
+  "contra": "0JXJt9",
+  "puesto": "Contador",
+  "depa": "Ventas",
+  "solicitudes": [
+    {
+      "_id": "RA6Y90z3487KX21c7E6xw24nlqekQ0KL2ukt4fv3g5wQHjQso",
+      "tipo": "Internacional",
+      "destino": "Nicaragua",
+      "motivo": "Seguimiento",
+      "inicio": "18/01/2023",
+      "final": "19/02/2023",
+      "aerolinea": "Delta",
+      "precio": 4249,
+      "alojamiento": "Hostal",
+      "transporte": "A pie",
+      "estado": "Pendiente"
+    },
+    {
+      "_id": "H7dN36CYQ8E69h4sUSM6dV5b4kkqlCe1HVOGzD6C4W9I056ut",
+      "tipo": "Internacional",
+      "destino": "Sweden",
+      "motivo": "Capacitacion",
+      "inicio": "08/09/2023",
+      "final": "19/09/2023",
+      "aerolinea": "Lufthansa",
+      "precio": 3095,
+      "alojamiento": "Casa de huéspedes",
+      "transporte": "A pie",
+      "estado": "Aprobada"
+    },
+    {
+      "_id": "4JN0LG48l5fC3N6Nq7061e0F531e22HL3uCXV9PD39R60mf5C",
+      "tipo": "Nacional",
+      "destino": "Sweden",
+      "motivo": "Capacitacion",
+      "inicio": "11/10/2023",
+      "final": "10/11/2023",
+      "aerolinea": "Southwest",
+      "precio": 3839,
+      "alojamiento": "Hotel",
+      "transporte": "Tren",
+      "estado": "Aprobada"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6548b7ef2691be6dbb4759a2"
+  },
+  "nombre": "Correy Karlqvist",
+  "correo": "ckarlqvistj@newyorker.com",
+  "contra": "Q5vKk9",
+  "puesto": "Programador",
+  "depa": "Operaciones",
+  "solicitudes": [
+    {
+      "_id": "LOg4q8pD604f0sNF636glahxxyz5b7G889JIoo2ndbTPBRMHG",
+      "tipo": "Internacional",
+      "destino": "Colombia",
+      "motivo": "Seguimiento",
+      "inicio": "05/03/2023",
+      "final": "01/04/2023",
+      "aerolinea": "Lufthansa",
+      "precio": 3368,
+      "alojamiento": "Hotel",
+      "transporte": "Bus",
+      "estado": "Aprobada"
+    },
+    {
+      "_id": "mD54yptH5OolNzEBjkQCFS0OAl1KJ0iwkzJvC1EYVHRzg3412",
+      "tipo": "Nacional",
+      "destino": "Cyprus",
+      "motivo": "Seguimiento",
+      "inicio": "26/06/2023",
+      "final": "22/07/2023",
+      "aerolinea": "Delta",
+      "precio": 996,
+      "alojamiento": "Apartamento",
+      "transporte": "Carro",
+      "estado": "Aprobada"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6548b7ef2691be6dbb4759a3"
+  },
+  "nombre": "Amandy De Maine",
+  "correo": "adek@whitehouse.gov",
+  "contra": "V101NM",
+  "puesto": "Recepcionista",
+  "depa": "Compras",
+  "solicitudes": [
+    {
+      "_id": "LH8FiqnU00707h2kEmi4jl6v6D8Pqfih6QL0tmnMaFUTBCjK5",
+      "tipo": "Internacional",
+      "destino": "Spain",
+      "motivo": "Cierre venta",
+      "inicio": "08/05/2023",
+      "final": "09/06/2023",
+      "aerolinea": "Southwest",
+      "precio": 404,
+      "alojamiento": "Camping",
+      "transporte": "Carro",
+      "estado": "Pendiente"
+    },
+    {
+      "_id": "ieGaVz6t6DYwvyJiJ2E0Af9fD5ui6fl9y2M7EvY400z5SplDe",
+      "tipo": "Internacional",
+      "destino": "Madagascar",
+      "motivo": "Cierre venta",
+      "inicio": "05/12/2023",
+      "final": "20/12/2023",
+      "aerolinea": "Delta",
+      "precio": 237,
+      "alojamiento": "Apartamento",
+      "transporte": "Tren",
+      "estado": "Pendiente"
+    },
+    {
+      "_id": "HdJ8eexJeDIP6x8xS1P1eYa82C4BNNsx61z2uNCQ9908pNJPh",
+      "tipo": "Nacional",
+      "destino": "Sweden",
+      "motivo": "Capacitacion",
+      "inicio": "09/12/2023",
+      "final": "25/12/2023",
+      "aerolinea": "Delta",
+      "precio": 4322,
+      "alojamiento": "Hostal",
+      "transporte": "A pie",
+      "estado": "Rechazada"
+    },
+    {
+      "_id": "K5l6fb6KQMJf8id8679GT4aTZ4dk2q4k333QAA977BMy80mc9",
+      "tipo": "Nacional",
+      "destino": "China",
+      "motivo": "Cierre venta",
+      "inicio": "24/11/2023",
+      "final": "16/12/2023",
+      "aerolinea": "Qatar Airways",
+      "precio": 1667,
+      "alojamiento": "Airbnb",
+      "transporte": "Carro",
+      "estado": "Aprobada"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6548b7ef2691be6dbb4759a4"
+  },
+  "nombre": "Selig Powers",
+  "correo": "spowersl@weather.com",
+  "contra": "6EUUa3",
+  "puesto": "Contador",
+  "depa": "Calidad",
+  "solicitudes": [
+    {
+      "_id": "bP9fD8B4dcB89Ec59tlsA4507SR9730c9KX5b8Z901b7KzB69",
+      "tipo": "Internacional",
+      "destino": "Portugal",
+      "motivo": "Seguimiento",
+      "inicio": "01/01/2023",
+      "final": "17/02/2023",
+      "aerolinea": "Qatar Airways",
+      "precio": 3190,
+      "alojamiento": "Hostal",
+      "transporte": "Buseta",
+      "estado": "Pendiente"
+    },
+    {
+      "_id": "0P95uO9L0vHZ3IoQY7Uu72lD1nJwy5D3oR51pdw45871qZMtm",
+      "tipo": "Internacional",
+      "destino": "Brazil",
+      "motivo": "Seguimiento",
+      "inicio": "23/06/2023",
+      "final": "18/07/2023",
+      "aerolinea": "Qatar Airways",
+      "precio": 3357,
+      "alojamiento": "Casa de huéspedes",
+      "transporte": "Bus",
+      "estado": "Rechazada"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6548b7ef2691be6dbb4759a5"
+  },
+  "nombre": "Benedick Moyse",
+  "correo": "bmoysem@liveinternet.ru",
+  "contra": "3Gat21",
+  "puesto": "Ingeniero",
+  "depa": "Operaciones",
+  "solicitudes": []
+},
+{
+  "_id": {
+    "$oid": "6548b7ef2691be6dbb4759a6"
+  },
+  "nombre": "Mead Myrtle",
+  "correo": "mmyrtlen@yellowbook.com",
+  "contra": "8Oq4M4",
+  "puesto": "Ingeniero",
+  "depa": "Legal",
+  "solicitudes": [
+    {
+      "_id": "4WC6QuNk66Grl7hieOI5766BpUc2h017673vUwGjx79n08S8Q",
+      "tipo": "Internacional",
+      "destino": "Croatia",
+      "motivo": "Seguimiento",
+      "inicio": "02/03/2023",
+      "final": "08/04/2023",
+      "aerolinea": "Qatar Airways",
+      "precio": 4012,
+      "alojamiento": "Hostal",
+      "transporte": "A pie",
+      "estado": "Aprobada"
+    },
+    {
+      "_id": "gZX8W7AXSnY4978o8LZ0zqNMSY7kDF1SITuffGeL0j9u7tdsa",
+      "tipo": "Nacional",
+      "destino": "China",
+      "motivo": "Capacitacion",
+      "inicio": "14/08/2023",
+      "final": "15/09/2023",
+      "aerolinea": "Qatar Airways",
+      "precio": 656,
+      "alojamiento": "Hostal",
+      "transporte": "Bus",
+      "estado": "Rechazada"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6548b7ef2691be6dbb4759a7"
+  },
+  "nombre": "Persis Walworth",
+  "correo": "pwalwortho@pcworld.com",
+  "contra": "NqZMC1",
+  "puesto": "Recepcionista",
+  "depa": "Calidad",
+  "solicitudes": [
+    {
+      "_id": "X7N14jbQTl01MBoA66Hj4hfiPam771Aep5XObFYk7LreaJN0G",
+      "tipo": "Nacional",
+      "destino": "Ukraine",
+      "motivo": "Seguimiento",
+      "inicio": "12/05/2023",
+      "final": "16/06/2023",
+      "aerolinea": "Delta",
+      "precio": 4467,
+      "alojamiento": "Apartamento",
+      "transporte": "A pie",
+      "estado": "Rechazada"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6548b7ef2691be6dbb4759a8"
+  },
+  "nombre": "Tiphanie Kleinmintz",
+  "correo": "tkleinmintzp@businessweek.com",
+  "contra": "90C7or",
+  "puesto": "Asistente",
+  "depa": "Legal",
+  "solicitudes": [
+    {
+      "_id": "028gMXEG6jaalSWoEr8hce7WjVJ7Hno5C69X3e73Zb287zL5U",
+      "tipo": "Nacional",
+      "destino": "Tanzania",
+      "motivo": "Seguimiento",
+      "inicio": "14/03/2023",
+      "final": "29/03/2023",
+      "aerolinea": "United",
+      "precio": 2525,
+      "alojamiento": "Hotel",
+      "transporte": "Buseta",
+      "estado": "Rechazada"
+    },
+    {
+      "_id": "Q1v3fFuW4DBeU2c5489kL4w8L8L0phXs979Wz2i4esn8lEdQ4",
+      "tipo": "Nacional",
+      "destino": "Palestinian Territory",
+      "motivo": "Capacitacion",
+      "inicio": "02/05/2023",
+      "final": "26/05/2023",
+      "aerolinea": "Singapore Airlines",
+      "precio": 3257,
+      "alojamiento": "Camping",
+      "transporte": "Buseta",
+      "estado": "Aprobada"
+    },
+    {
+      "_id": "3J2ck2c0rJtf633RpyX7x22Aq5072WAq030r2ty6cWfPgTu13",
+      "tipo": "Internacional",
+      "destino": "Thailand",
+      "motivo": "Capacitacion",
+      "inicio": "05/09/2023",
+      "final": "27/09/2023",
+      "aerolinea": "Singapore Airlines",
+      "precio": 1799,
+      "alojamiento": "Hostal",
+      "transporte": "Bus",
+      "estado": "Aprobada"
+    },
+    {
+      "_id": "MCmq6fHnPK95VXxdKQzuFa08SX4QroOwOP7A5Kroyx6j8m0v4",
+      "tipo": "Internacional",
+      "destino": "China",
+      "motivo": "Capacitacion",
+      "inicio": "10/10/2023",
+      "final": "08/11/2023",
+      "aerolinea": "Lufthansa",
+      "precio": 4220,
+      "alojamiento": "Albergue",
+      "transporte": "Buseta",
+      "estado": "Aprobada"
+    },
+    {
+      "_id": "Q77vSWyte8uJ3VK20yl873Cvx1Yw5uac0KUo44R52L01gaAMG",
+      "tipo": "Internacional",
+      "destino": "Poland",
+      "motivo": "Cierre venta",
+      "inicio": "27/11/2023",
+      "final": "19/12/2023",
+      "aerolinea": "British Airways",
+      "precio": 2202,
+      "alojamiento": "Camping",
+      "transporte": "Buseta",
+      "estado": "Aprobada"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6548b7ef2691be6dbb4759a9"
+  },
+  "nombre": "Audrye Vaisey",
+  "correo": "avaiseyq@msn.com",
+  "contra": "2J9gUR",
+  "puesto": "Asistente",
+  "depa": "Compras",
+  "solicitudes": [
+    {
+      "_id": "P2kHueOa5Kb5M7s3o8lzd6U3Gj4HjsDLNYK599bNL1CxZlCb6",
+      "tipo": "Nacional",
+      "destino": "Paraguay",
+      "motivo": "Seguimiento",
+      "inicio": "05/01/2023",
+      "final": "08/02/2023",
+      "aerolinea": "Qatar Airways",
+      "precio": 2245,
+      "alojamiento": "Apartamento",
+      "transporte": "Carro",
+      "estado": "Pendiente"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6548b7ef2691be6dbb4759aa"
+  },
+  "nombre": "Sawyer Dunridge",
+  "correo": "sdunridger@istockphoto.com",
+  "contra": "7XXPF7",
+  "puesto": "Gerente",
+  "depa": "Legal",
+  "solicitudes": [
+    {
+      "_id": "a951BB1AQ37wp5lYlNV23lz90pRaBJOZEAK2OOMn9E076JmDN",
+      "tipo": "Internacional",
+      "destino": "Palestinian Territory",
+      "motivo": "Seguimiento",
+      "inicio": "10/07/2023",
+      "final": "11/08/2023",
+      "aerolinea": "British Airways",
+      "precio": 4032,
+      "alojamiento": "Apartamento",
+      "transporte": "A pie",
+      "estado": "Aprobada"
+    },
+    {
+      "_id": "12O6ScAEpWnIex7NX8hBjK425qQtEd7Uj5LBZWNjyHU23iPO1",
+      "tipo": "Internacional",
+      "destino": "France",
+      "motivo": "Seguimiento",
+      "inicio": "21/06/2023",
+      "final": "23/07/2023",
+      "aerolinea": "Singapore Airlines",
+      "precio": 328,
+      "alojamiento": "Albergue",
+      "transporte": "A pie",
+      "estado": "Aprobada"
+    },
+    {
+      "_id": "KiQ1l7HfHkAr9y8O74oHCNREJmnyR5DzECOjbWEojv1nW5A62",
+      "tipo": "Nacional",
+      "destino": "China",
+      "motivo": "Cierre venta",
+      "inicio": "04/12/2023",
+      "final": "24/12/2023",
+      "aerolinea": "Delta",
+      "precio": 4915,
+      "alojamiento": "Airbnb",
+      "transporte": "Buseta",
+      "estado": "Aprobada"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6548b7ef2691be6dbb4759ab"
+  },
+  "nombre": "Teddie Kaufman",
+  "correo": "tkaufmans@xing.com",
+  "contra": "MoZMU1",
+  "puesto": "Asistente",
+  "depa": "Marketing",
+  "solicitudes": [
+    {
+      "_id": "q3M94z0i43HEUqEmCfNq63WgW7Fg5YH71kp1xT3X6IC9ml0MQ",
+      "tipo": "Internacional",
+      "destino": "East Timor",
+      "motivo": "Cierre venta",
+      "inicio": "02/07/2023",
+      "final": "03/08/2023",
+      "aerolinea": "Singapore Airlines",
+      "precio": 2379,
+      "alojamiento": "Airbnb",
+      "transporte": "Moto",
+      "estado": "Pendiente"
+    },
+    {
+      "_id": "9v4VbVd51ft6ddu96oQQdF5yEXaaWqULPAqP8c1LsnxqrKzb7",
+      "tipo": "Nacional",
+      "destino": "Indonesia",
+      "motivo": "Seguimiento",
+      "inicio": "04/09/2023",
+      "final": "30/09/2023",
+      "aerolinea": "British Airways",
+      "precio": 1648,
+      "alojamiento": "Hotel",
+      "transporte": "Carro",
+      "estado": "Rechazada"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6548b7ef2691be6dbb4759ac"
+  },
+  "nombre": "Judie Gres",
+  "correo": "jgrest@photobucket.com",
+  "contra": "f9zVLi",
+  "puesto": "Gerente",
+  "depa": "Operaciones",
+  "solicitudes": [
+    {
+      "_id": "9959h8kL5d7qRO706y8KxRK523SMQ1sDP8GxAVP1N1VZRW9vp",
+      "tipo": "Internacional",
+      "destino": "Greece",
+      "motivo": "Capacitacion",
+      "inicio": "11/01/2023",
+      "final": "03/02/2023",
+      "aerolinea": "Lufthansa",
+      "precio": 4784,
+      "alojamiento": "Albergue",
+      "transporte": "A pie",
+      "estado": "Pendiente"
+    },
+    {
+      "_id": "vk87uKbjdo6lg2SGK1J4MHPD60Q79cuaE97t62OR0t3iS5R41",
+      "tipo": "Nacional",
+      "destino": "China",
+      "motivo": "Capacitacion",
+      "inicio": "31/08/2023",
+      "final": "05/10/2023",
+      "aerolinea": "American",
+      "precio": 2882,
+      "alojamiento": "Hotel",
+      "transporte": "Tren",
+      "estado": "Aprobada"
+    },
+    {
+      "_id": "ynKQ5gdnUaDJiBRYiTfaTfpC75dE1Cty6bM00hjc31bxSTmW2",
+      "tipo": "Nacional",
+      "destino": "China",
+      "motivo": "Capacitacion",
+      "inicio": "31/10/2023",
+      "final": "11/11/2023",
+      "aerolinea": "British Airways",
+      "precio": 4384,
+      "alojamiento": "Airbnb",
+      "transporte": "Buseta",
+      "estado": "Rechazada"
+    }
+  ]
+}]
