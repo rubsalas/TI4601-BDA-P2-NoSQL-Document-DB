@@ -37,6 +37,9 @@ export class ApiService {
   getCollab():Observable<any[]>{
     return this.http.get<any>(this.APIUrl+'/api/Collaborator');
   }
+  getRequests():Observable<any[]>{
+    return this.http.get<any>(this.APIUrl+'/api/Administrator/Request');
+  }
   // get colaborador por id
   getCollabId(id:any):Observable<any[]>{
     return this.http.get<any>(this.APIUrl+'/api/Collaborator/'+`${id}`+'/Request');

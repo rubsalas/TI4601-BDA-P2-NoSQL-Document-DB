@@ -19,6 +19,7 @@ export class ProgrammedComponent {
     {mes:"Octubre", num:10},{mes:"Noviembre", num:11},{mes:"Diciembre", num:12},];
   annos: any = [];
   soli: any = [];
+  temp:any = [];
 
   programados:any = []
   timeForm:any;
@@ -46,50 +47,32 @@ export class ProgrammedComponent {
     }
     else{
       this.isClosed = true;
-      this.programados = []
+      this.programados = [];
       this.filtrodesolicitudes(this.soli, parseInt(Value.mes), parseInt(Value.anno));
     }
   }
 
   refreshList(){
-    // hacer el get de usuarios ----->
-    this.solicitudes =[]
-    this.soli =[]
-    this.api.getCollab().subscribe(data=>{
-      this.solicitudes = data; // con esto tengo todos los usuarios 
-      for (let i = 0; i < this.solicitudes.length; i++) { // para cada usuario en lista
-        for (let j = 0; j < this.solicitudes[i].solicitudes.length; j++) { // para cada solicitud del usuario
-          // haga una solicitud nueva y la agrega a una lista que es la que va a mostrar
-          let temp = {
-            id:this.solicitudes[i].id,
-            nombre:this.solicitudes[i].nombre,
-            correo:this.solicitudes[i].correo,
-            contra:this.solicitudes[i].contra,
-            puesto:this.solicitudes[i].puesto,
-            depa:this.solicitudes[i].depa,
-            tipo:this.solicitudes[i].solicitudes[j].tipo,
-            destino:this.solicitudes[i].solicitudes[j].destino,
-            motivo:this.solicitudes[i].solicitudes[j].motivo,
-            inicio:this.solicitudes[i].solicitudes[j].inicio,
-            final:this.solicitudes[i].solicitudes[j].final,
-            aerolinea:this.solicitudes[i].solicitudes[j].aerolinea,
-            alojamiento:this.solicitudes[i].solicitudes[j].alojamiento,
-            precio:this.solicitudes[i].solicitudes[j].precio,
-            transporte:this.solicitudes[i].solicitudes[j].transporte,
-            estado:this.solicitudes[i].solicitudes[j].estado
-          }
-          
-          this.annos.push(this.obtenerAno(temp.inicio))
-          
-          this.soli.push(temp)     
+      // hacer el get de usuarios ----->
+      this.solicitudes =[];
+      this.programados = [];
+      this.soli =[];
+      this.api.getRequests().subscribe(data=>{
+        this.solicitudes = data; // con esto tengo todos los usuarios 
+        console.log(this.solicitudes);
+        for (let i = 0; i < this.solicitudes.length; i++) {
+          if (this.solicitudes[i].estado == "Aceptado") {
+            this.soli.push(this.solicitudes[i]);
+            this.temp.push(this.obtenerAno(this.solicitudes[i].inicio))
+          }        
         }
-      }
-      this.annos = this.eliminarRepetidos(this.annos)
-      console.log(this.annos);
-      
-    }); 
+        this.annos = this.eliminarRepetidos(this.temp)
+        console.log(this.programados);
+        console.log(this.annos);
+        
+      }); 
   }
-
+  //
   eliminarRepetidos(lista: number[]): number[] {
     return lista.filter((numero, index, arr) => arr.indexOf(numero) === index);
   }

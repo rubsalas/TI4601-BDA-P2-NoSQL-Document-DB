@@ -13,7 +13,8 @@ export class DestinationComponent {
   container!: HTMLElement;
   isClosed = false;
   solicitudes: any = [];
-  soli: any = [];
+  filtradas: any =[];
+  temp:any = [];
   selected:any =[];
   destForm:any;
 
@@ -41,55 +42,45 @@ export class DestinationComponent {
       this.isClosed = true;
       this.selected = [];
       // recorrer la lista de soli y guardar en selected los que cumplan la condicion del destino
-      for (let i = 0; i < this.soli.length; i++) {
-        if (this.soli[i].destino == Value.destino) {
-          this.selected.push(this.soli[i])
-        }      
+      for (let i = 0; i < this.solicitudes.length; i++) {
+        if (this.solicitudes[i].destino == Value.destino) {
+          this.selected.push(this.solicitudes[i])
+        }
       }
     }
   }
 
   refreshList(){
-    // hacer el get de usuarios ----->
-    this.solicitudes =[]
-    this.soli =[]
-    this.api.getCollab().subscribe(data=>{
-      this.solicitudes = data; // con esto tengo todos los usuarios 
-      console.log(this.solicitudes);      
-      console.log(this.solicitudes[0].solicitudes[0]);
-      for (let i = 0; i < this.solicitudes.length; i++) { // para cada usuario en lista
-        for (let j = 0; j < this.solicitudes[i].solicitudes.length; j++) { // para cada solicitud del usuario
-          // haga una solicitud nueva y la agrega a una lista que es la que va a mostrar
-          let temp = {
-            id:this.solicitudes[i].id,
-            nombre:this.solicitudes[i].nombre,
-            correo:this.solicitudes[i].correo,
-            contra:this.solicitudes[i].contra,
-            puesto:this.solicitudes[i].puesto,
-            depa:this.solicitudes[i].depa,
-            tipo:this.solicitudes[i].solicitudes[j].tipo,
-            destino:this.solicitudes[i].solicitudes[j].destino,
-            motivo:this.solicitudes[i].solicitudes[j].motivo,
-            inicio:this.solicitudes[i].solicitudes[j].inicio,
-            final:this.solicitudes[i].solicitudes[j].final,
-            aerolinea:this.solicitudes[i].solicitudes[j].aerolinea,
-            alojamiento:this.solicitudes[i].solicitudes[j].alojamiento,
-            precio:this.solicitudes[i].solicitudes[j].precio,
-            transporte:this.solicitudes[i].solicitudes[j].transporte,
-            estado:this.solicitudes[i].solicitudes[j].estado
-          }
-          
-          this.soli.push(temp)     
-        }
-      }
-      console.log(this.soli);
-    }); 
+    this.solicitudes =[];
+    this.api.getRequests().subscribe(data=>{
+      this.solicitudes = data;
+      this.temp = this.filtrodesolicitudes(this.solicitudes);
+      console.log(this.temp);
+      
+      this.filtradas = this.compararPorNombre(this.temp)
+      console.log(this.filtradas);
+      
+    });
   }
 
-  obtenerMeses(){
-    
+  filtrodesolicitudes(lista: any) {
+    // Usamos un conjunto (Set) para almacenar nombres únicos.
+    const nombresUnicosSet = new Set<string>();
+  
+    // Iteramos a través de la lista de nombres y los agregamos al conjunto.
+    for (let i = 0; i < lista.length; i++) {
+      nombresUnicosSet.add(lista[i].destino);
+      
+    }
+    // Convertimos el conjunto de nuevo a un array para devolver la lista de nombres únicos.
+    const nombresUnicos = Array.from(nombresUnicosSet);
+  
+    return nombresUnicos;
   }
-  obtenerAos(){
 
-  }
+  // Función de comparación personalizada para ordenar por el campo "nombre"
+compararPorNombre(lista: string[]): string[] {
+  // Usamos el método `sort()` para ordenar la lista alfabéticamente.
+  return lista.sort();
+}
 }

@@ -3,8 +3,8 @@ import { ApiService } from 'src/app/api.service';
 
 // Define la interfaz Solicitud directamente en este archivo
 interface Solicitud {
-  id: string,
-  rid:string,
+  cid: string,
+  id:string,
   tipo: string,
   destino:string,
   motivo:string,
@@ -49,7 +49,7 @@ export class ValorationComponent implements OnInit{
     }
 
     // hacer un put a la base de datos con el id de solicitud y el estado aceptado
-    this.api.putSolicitud(solicitud.id, solicitud.rid, tempData).subscribe(
+    this.api.putSolicitud(solicitud.cid, solicitud.id, tempData).subscribe(
       response => {
         // Maneja la respuesta del servidor aquí
         console.log('Respuesta del servidor:', response);
@@ -76,7 +76,7 @@ export class ValorationComponent implements OnInit{
     }
 
     // hacer un put a la base de datos con el id de solicitud y el estado aceptado
-    this.api.putSolicitud(solicitud.id, solicitud.rid, tempData).subscribe(
+    this.api.putSolicitud(solicitud.cid, solicitud.id, tempData).subscribe(
       response => {
         // Maneja la respuesta del servidor aquí
         console.log('Respuesta del servidor:', response);
@@ -92,39 +92,15 @@ export class ValorationComponent implements OnInit{
     // hacer el get de usuarios ----->
     this.solicitudes =[]
     this.soli =[]
-    this.api.getCollab().subscribe(data=>{
+    this.api.getRequests().subscribe(data=>{
       this.solicitudes = data; // con esto tengo todos los usuarios 
-      console.log(this.solicitudes);      
-      console.log(this.solicitudes[0].solicitudes[0]);
-      for (let i = 0; i < this.solicitudes.length; i++) { // para cada usuario en lista
-        for (let j = 0; j < this.solicitudes[i].solicitudes.length; j++) { // para cada solicitud del usuario
-          // haga una solicitud nueva y la agrega a una lista que es la que va a mostrar
-          let temp = {
-            id:this.solicitudes[i].id,
-            rid:this.solicitudes[i].solicitudes[j].id,
-            nombre:this.solicitudes[i].nombre,
-            correo:this.solicitudes[i].correo,
-            contra:this.solicitudes[i].contra,
-            puesto:this.solicitudes[i].puesto,
-            depa:this.solicitudes[i].depa,
-            tipo:this.solicitudes[i].solicitudes[j].tipo,
-            destino:this.solicitudes[i].solicitudes[j].destino,
-            motivo:this.solicitudes[i].solicitudes[j].motivo,
-            inicio:this.solicitudes[i].solicitudes[j].inicio,
-            final:this.solicitudes[i].solicitudes[j].final,
-            aerolinea:this.solicitudes[i].solicitudes[j].aerolinea,
-            alojamiento:this.solicitudes[i].solicitudes[j].alojamiento,
-            precio:this.solicitudes[i].solicitudes[j].precio,
-            transporte:this.solicitudes[i].solicitudes[j].transporte,
-            estado:this.solicitudes[i].solicitudes[j].estado
-          }
-          
-          // si el estado es Pendiente
-          if (this.solicitudes[i].solicitudes[j].estado == "Pendiente") {
-            this.soli.push(temp)
-          }      
-        }
+      console.log(this.solicitudes);
+      for (let i = 0; i < this.solicitudes.length; i++) {
+        if (this.solicitudes[i].estado == "Pendiente") {
+          this.soli.push(this.solicitudes[i]);
+        }        
       }
+      console.log(this.soli);
     }); 
   }
 }

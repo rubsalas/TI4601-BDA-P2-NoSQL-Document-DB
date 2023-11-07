@@ -7,8 +7,8 @@
   <label>
       <h5>Seleccione el destino:</h5>
       <select class="rounded-pill" aria-label="Default select example" formControlName="destino">
-        <option *ngFor="let sol of soli" [value]="sol.destino">
-          {{sol.destino}}
+        <option *ngFor="let sol of filtradas" [value]="sol">
+          {{sol}}
         </option>
       </select>
   </label>

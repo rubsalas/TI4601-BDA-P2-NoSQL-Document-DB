@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { AppComponent } from '../app.component';
+import { HeaderComponent } from '../header/header.component';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -17,7 +18,7 @@ export class LoginComponent implements OnInit{
   loginForm: any;
   signUpForm: any;
 
-  constructor(private el: ElementRef, private api:ApiService, private app:AppComponent, private formBuilder:FormBuilder, private router: Router) { 
+  constructor(private el: ElementRef, private api:ApiService, private app:HeaderComponent, private formBuilder:FormBuilder, private router: Router) { 
     // formato del formulario para inicio de sesion
     this.loginForm = this.formBuilder.group({
       correo: '',

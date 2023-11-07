@@ -15,6 +15,7 @@ import { ProgrammedComponent } from './admin/programmed/programmed.component';
 import { InternationalComponent } from './admin/international/international.component';
 import { DestinationComponent } from './admin/destination/destination.component';
 import { ApiService } from './api.service';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ApiService } from './api.service';
     ProgrammedComponent,
     InternationalComponent,
     DestinationComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
